@@ -1,0 +1,83 @@
+/* Classes Globales */
+.link{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: color 0.25s;
+}
+
+.link:hover{
+    text-decoration: underline;
+    color: darkgrey;
+    transition: color 0.25s;
+}
+
+/* Formulaires */
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.labelRow{
+    margin-bottom: 0.5em;
+    width: 20vw;
+    min-width: 20em;
+    max-width: 30em;
+}
+
+.formContainer label{
+    font-weight: bold;
+}
+
+.formContainer input{
+    width: 20vw;
+    min-width: 20em;
+    max-width: 30em;
+    height: 2.2em;
+    margin-bottom: 1.5em;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.formButton{
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    min-width: 20em;
+    max-width: 30em;
+    height: 2.5em;
+    border: none;
+    border-radius: 2em;
+    background-color: darkgrey;
+    transition: 0.25s;
+}
+
+.formButton:hover{
+    background-color: #B04541;
+}
+
+.requiredField{
+    color: red;
+}
+
+.formInputError{
+    background-color: #FFBBBB;
+    border-color: 1px solid red;
+    border-radius: 0.3em 0.3em 0 0;
+    color: red;
+}
+
+/* Messages d'erreurs*/
+.error{
+    margin: 1em;
+    color: red;
+    font-weight: bold;
+}
+
+
+/* Conteneur principal */
+#mainContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

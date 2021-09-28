@@ -1,0 +1,17 @@
+/*Styles composant Body*/
+#contentContainer{
+    flex:8;
+    margin: 2em;
+}
+
+#navMenu ul{
+    display : flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-top: 7.5em;
+    list-style: none;
+}
+
+#navMenu ul li{
+    margin : 0em 1em;
+}

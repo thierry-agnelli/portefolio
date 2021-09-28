@@ -1,0 +1,34 @@
+/*Styles composant Bannière*/
+#banner{
+    min-height: 10em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: inset #B04541;
+}
+
+#bannerLeftPart{
+    flex:2;
+    min-width: 12em;
+    background-color: #5C9647;
+}
+
+#bannerRightPart{
+    flex:8;
+    display:flex;
+    flex-direction: row-reverse;
+}
+
+#bannerSubRightPart{
+    flex:1;
+}
+
+#navMenu{
+    flex: 4;
+}
+
+@media (max-width: 720px){
+    #bannerRightPart{
+        flex-direction: column;
+    }
+}

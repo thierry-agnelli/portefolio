@@ -1,0 +1,10 @@
+#validationContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+#validationContainer h2{
+    font-size: 2.5em;
+}

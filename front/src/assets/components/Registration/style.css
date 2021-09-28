@@ -1,0 +1,12 @@
+
+#registerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+#registerContainer h2{
+    font-size: 2.5em;
+}
+

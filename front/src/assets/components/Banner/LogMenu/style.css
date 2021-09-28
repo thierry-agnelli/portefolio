@@ -1,0 +1,25 @@
+#LogContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.5em;
+}
+
+#userIcon{
+    padding: 0.5em;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 100%;
+    background-color: #B04541;
+}
+
+#logTextContainer{
+    padding: 0.5em;
+    height: 1.5em;
+    width: 6em;
+}
+
+#currentUserContainer{
+    font-size: 0.9em;
+}

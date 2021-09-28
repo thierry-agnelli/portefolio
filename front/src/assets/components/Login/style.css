@@ -1,0 +1,34 @@
+#loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#loginContainer h2{
+    font-size: 2.5em;
+}
+
+#loginContainer button:hover{
+    background-color: #B04541;
+}
+
+#loginTopRowContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#stayLoggedContainer{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1.5em;
+}
+
+.forgottenPwd{
+    font-size: 0.75em;
+}
+
+#registerLink{
+    font-size: 0.9em;
+    margin-top: 0.3em;
+}
