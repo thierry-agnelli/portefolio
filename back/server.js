@@ -22,7 +22,7 @@ server.on("listening", () =>{
 });
 
 // Connexion base de données
-mongoose.connect(process.env.PORT || "mongodb://localhost:27017/tagnel",
+mongoose.connect(process.env.SCALINGO_MONGO_URL || "mongodb://localhost:27017/tagnel",
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
