@@ -15,7 +15,7 @@ export const checkLoggedUser = (setUser) => {
 
         fetch(`${config.API_URL}/user/authToken-validation/${loggedUser.authToken}`)
             .then(response => {
-                if (response.status == 200)
+                if (response.status === 200)
                     setUser(loggedUser);
                 else
                     throw response;
@@ -23,7 +23,6 @@ export const checkLoggedUser = (setUser) => {
             .catch(err => {
                 err.text()
                     .then(message => {
-                        console.log(message);
                         // Nettoyage des informations erronées dans les storage 
                         localStorage.removeItem("user");
                         sessionStorage.removeItem("user");

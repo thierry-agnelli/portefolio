@@ -118,7 +118,6 @@ const userController = {
               throw 403;
           }
           else {
-            console.log("mdp NOK");
             throw 418;
           }
         }

@@ -8,7 +8,8 @@ import config from "../config.js";
 
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    // host: "smtp.gmail.com",
+    service: "Gmail",
     auth: {
         user: config.EMAIL, // generated ethereal user
         pass: config.PASS, // generated ethereal password

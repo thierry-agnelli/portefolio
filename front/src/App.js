@@ -6,8 +6,6 @@ import Banner from './assets/components/Banner/Banner';
 import Body from './assets/components/Body/Body';
 // Styles
 import './App.css';
-// Config
-import config from "./config.json";
 // Méthodes
 import { checkLoggedUser } from "./assets/components/lib/logMethod";
 

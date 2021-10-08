@@ -34,7 +34,7 @@ const ResetPassword = () => {
     useEffect(() => {
         fetch(`${config.API_URL}/user/token-validation/${params.token}`)
             .then(response => {
-                if (response.status == 200)
+                if (response.status === 200)
                     // Si le lien est valid affichage du formulaire de reset du password
                     setValidToken(true);
                 else
@@ -48,6 +48,7 @@ const ResetPassword = () => {
 
     // Vérification si le mot de passe répété est identique au mot de passe
     useEffect(() => {
+        // Vérification de la validité du token (erreur si nok car inputs non affichés)
         if (validToken)
             checkRepeatedNewPwd();
     }, [newPwd, repeatedNewPwd]);
