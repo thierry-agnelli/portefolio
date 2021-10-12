@@ -6,15 +6,21 @@ import { promptLog } from "../lib/logs.js";
 // Config
 import config from "../config.js";
 
-// create reusable transporter object using the default SMTP transport
+// Création du transporter pour envoie des mails
 const transporter = nodemailer.createTransport({
-    // host: "smtp.gmail.com",
-    service: "Gmail",
+    host: config.MAIL_HOST,
+    port: config.MAIL_PORT,
+    secure: false,
     auth: {
         user: config.EMAIL, // generated ethereal user
-        pass: config.PASS, // generated ethereal password
-    },
+        pass: config.MAIL_PASS, // generated ethereal password
+    }
 });
+// Informations de l'expéditeur
+const senderInfos = {
+    name: config.SENDER_NAME,
+    address: config.EMAIL
+}
 
 export const accountValidationMail = (accountInfos) => {
 
@@ -23,7 +29,7 @@ export const accountValidationMail = (accountInfos) => {
 
         // send mail with defined transport object
         const mailOptions = {
-            from: "Thierry AGNELLI", // sender address
+            from: senderInfos, // Infos expéditeur
             to: accountInfos.email, // list of receivers
             subject: "Bienvenue", // Subject line
             html: `
@@ -43,8 +49,10 @@ export const accountValidationMail = (accountInfos) => {
             promptLog("Sending mail", "yellow");
             if (err)
                 reject(err);
-
-            resolve("email sended");
+            else{
+                promptLog("email sended", "green");
+                resolve("email sended");
+            }
         });
     });
 };
@@ -55,7 +63,7 @@ export const resetPasswordMail = (accountInfos) => {
 
     // send mail with defined transport object
     const mailOptions = {
-        from: "Thierry AGNELLI", // sender address
+        from: senderInfos, // Infos expéditeur
         to: accountInfos.email, // list of receivers
         subject: "Demande de réinitialisation de mot de passe", // Subject line
         html: `
@@ -75,10 +83,15 @@ export const resetPasswordMail = (accountInfos) => {
 
     transporter.sendMail(mailOptions, (err, data) => {
         promptLog("Sending mail", "yellow");
-        if (err)
+        
+        if (err){
+            console.log(err);
             reject(err);
-
-        resolve("email sended");
+        }
+        else{
+            promptLog("email sended", "green");
+            resolve("email sended");
+        }
     });
 
 };
