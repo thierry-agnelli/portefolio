@@ -10,7 +10,7 @@ const Home = () => {
     // Context
     const context = useContext(AppContext);
 
-    return(
+    return (
         <div>
             <div>Ici il y aura du contenu</div>
         </div>

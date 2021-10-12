@@ -1,8 +1,10 @@
 // Dépendances
-import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState, useRef, useContext } from "react";
+import { Link, Redirect } from "react-router-dom";
 // Style
 import "./style.css";
+// Contexte
+import { AppContext } from "../../../App";
 // Config
 import config from "../../../config.json"
 
@@ -22,12 +24,16 @@ const Registration = () => {
     });
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
+
     /* Références */
     const emailRef = useRef(null);
     const lastNameRef = useRef(null);
     const cityRef = useRef(null);
     const pwdRef = useRef(null);
     const repeatPwdRef = useRef(null);
+
+    /* Contexte */
+    const context = useContext(AppContext);
 
     /* Fonctions */
     const checkRepeatPwd = () => {
@@ -142,41 +148,44 @@ const Registration = () => {
 
     return (
         <div id="registerContainer">
-            {!success ?
+            {context.getUser() ? <Redirect to="/accueil" /> :
                 <>
-                    <h2>Inscription</h2>
-                    <form className="formContainer">
-                        <label className="LabelRow" htmlFor="registerInput_email">E-mail : <span className="requiredField">*</span></label>
-                        <input type="email" id="registerInput_email" ref={emailRef} onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_lastName">Nom : <span className="requiredField">*</span></label>
-                        <input type="text" id="registerInput_lastName" ref={lastNameRef} onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_firstName">Prénom :</label>
-                        <input type="text" id="registerInput_firstName" onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_company">Société :</label>
-                        <input type="text" id="registerInput_company" onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_adress">Address :</label>
-                        <input type="text" id="registerInput_address" onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_postCode">Code Postal :</label>
-                        <input type="text" id="registerInput_postCode" onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_city">Ville :</label>
-                        <input type="text" id="registerInput_city" ref={cityRef} onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_phone">Numéro de téléphone :</label>
-                        <input type="text" id="registerInput_phone" onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_pwd">Mot de passe : <span className="requiredField">*</span></label>
-                        <input type="password" id="registerInput_pwd" ref={pwdRef} onChange={dataInput} />
-                        <label className="LabelRow" htmlFor="registerInput_repeatPwd">Répéter le mot de passe : <span className="requiredField">*</span></label>
-                        <input type="password" id="registerInput_repeatPwd" ref={repeatPwdRef} onChange={dataInput} />
-                    </form>
-                    <div>
-                        <button className="formButton" onClick={submitRegistration}>Soumettre</button>
-                    </div>
-                    <div className="error">{error}</div>
-                </> :
-                <>
-                    <h2>Bravo !</h2>
-                    <p>Un e-mail de confirmation vous a été envoyé. Veuillez consulter votre boîte de réception.</p>
+                    {!success ?
+                        <>
+                            <h2>Inscription</h2>
+                            <form className="formContainer">
+                                <label className="LabelRow" htmlFor="registerInput_email">E-mail : <span className="requiredField">*</span></label>
+                                <input type="email" id="registerInput_email" ref={emailRef} onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_lastName">Nom : <span className="requiredField">*</span></label>
+                                <input type="text" id="registerInput_lastName" ref={lastNameRef} onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_firstName">Prénom :</label>
+                                <input type="text" id="registerInput_firstName" onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_company">Société :</label>
+                                <input type="text" id="registerInput_company" onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_adress">Address :</label>
+                                <input type="text" id="registerInput_address" onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_postCode">Code Postal :</label>
+                                <input type="text" id="registerInput_postCode" onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_city">Ville :</label>
+                                <input type="text" id="registerInput_city" ref={cityRef} onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_phone">Numéro de téléphone :</label>
+                                <input type="text" id="registerInput_phone" onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_pwd">Mot de passe : <span className="requiredField">*</span></label>
+                                <input type="password" id="registerInput_pwd" ref={pwdRef} onChange={dataInput} />
+                                <label className="LabelRow" htmlFor="registerInput_repeatPwd">Répéter le mot de passe : <span className="requiredField">*</span></label>
+                                <input type="password" id="registerInput_repeatPwd" ref={repeatPwdRef} onChange={dataInput} />
+                            </form>
+                            <div>
+                                <button className="formButton" onClick={submitRegistration}>Soumettre</button>
+                            </div>
+                            <div className="error">{error}</div>
+                        </> :
+                        <>
+                            <h2>Bravo !</h2>
+                            <p>Un e-mail de confirmation vous a été envoyé. Veuillez consulter votre boîte de réception.</p>
+                        </>}
+                    <Link to="/acceuil" className="link" >Retour à l'accueil</Link>
                 </>}
-                <Link to="/acceuil" className="link" >Retour à l'accueil</Link>
         </div>
     );
 };

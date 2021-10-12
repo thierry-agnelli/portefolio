@@ -122,7 +122,8 @@ const Login = () => {
                 <Link to="/registration" id="registerLink" className="link">Pas encore inscrit ?</Link>
                 <div className="error">{error ? error: null}</div>
                 <Link to="/acceuil" className="link" >Retour à l'accueil</Link>
-                {logInSucces ? <Redirect to="/accueil"/>: null}
+                {/* Redirection vers accueil si réussite de connexion ou si déjà connecté */}
+                {logInSucces || context.getUser() ? <Redirect to="/accueil"/>: null}
             </div>
     );
 };

@@ -8,9 +8,12 @@
 }
 
 #bannerLeftPart{
-    flex:2;
-    min-width: 12em;
-    background-color: #5C9647;
+    flex:1;
+    min-width: 15em;
+    background-color: #65B04A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #bannerRightPart{
@@ -27,8 +30,31 @@
     flex: 4;
 }
 
+#navMenu ul{
+    display : flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-top: 7.5em;
+    list-style: none;
+}
+
+#navMenu ul li{
+    margin : 0em 1em;
+}
+
 @media (max-width: 720px){
-    #bannerRightPart{
+    /* #bannerRightPart{
         flex-direction: column;
+    } */
+
+    #navMenu ul{
+        flex-direction: column;
+        padding-top: 0;
+        padding-left: 0;
+        align-items: flex-start;
+    }
+
+    #navMenu ul li{
+        margin : 0.25em 1em;
     }
 }

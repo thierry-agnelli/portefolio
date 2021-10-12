@@ -19,7 +19,7 @@ const Banner = () => {
                 </div>
                 <nav id="navMenu">
                     <ul>
-                        <li><Link to="/accueil" className="link">Acceuil</Link></li>
+                        <li><Link to="/accueil" className="link">Accueil</Link></li>
                         <li><Link to="/competences" className="link">Compétences</Link></li>
                         <li><Link to="/realisations" className="link">Réalisations</Link></li>
                         <li><Link to="/contact" className="link">Contact</Link></li>
