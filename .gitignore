@@ -32,5 +32,9 @@ ca.pem
 
 # config
 /back/config.js
+
+# Git deployment
+/front/.git
+/front/.gitignore
 /back/.git
 /back/.gitignore
