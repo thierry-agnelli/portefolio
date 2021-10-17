@@ -38,7 +38,7 @@ export const accountValidationMail = (accountInfos) => {
                     <br/>
                     <p>Vous venez de vous inscrire sur mon site, bienvenue à vous.</p>
                     <p>Merci de cliquer sur ce lien pour valider votre compte :</p>
-                    <p>${config.FRONT_URL}/account-validation/${accountInfos.validated}</p>
+                    <p>${config.FRONT_URL}/account-validation?token=${accountInfos.validated}</p>
                     <br/>
                     <div><i>Thierry Agnelli</i></div>
                     <div><i>Développeur Fullstack Javascript/React/React Native/Node...etc </i></div>

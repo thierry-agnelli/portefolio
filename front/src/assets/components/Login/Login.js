@@ -121,7 +121,7 @@ const Login = () => {
                 <button id="loginBtn" className="formButton" onClick={loginBtnClick}>Connexion</button>
                 <Link to="/registration" id="registerLink" className="link">Pas encore inscrit ?</Link>
                 <div className="error">{error ? error: null}</div>
-                <Link to="/acceuil" className="link" >Retour à l'accueil</Link>
+                <Link to="/accueil" className="link" >Retour à l'accueil</Link>
                 {/* Redirection vers accueil si réussite de connexion ou si déjà connecté */}
                 {logInSucces || context.getUser() ? <Redirect to="/accueil"/>: null}
             </div>

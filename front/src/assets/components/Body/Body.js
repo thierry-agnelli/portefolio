@@ -17,7 +17,7 @@ const Body = () => {
   return (
     <div id="contentContainer">
       <Switch>
-        <Route exact path="/">
+        <Route path="/" exact>
           <Redirect to="/accueil" />
         </Route>
         <Route path="/accueil">
@@ -38,7 +38,8 @@ const Body = () => {
         <Route path="/registration">
           <Registration />
         </Route>
-        <Route path="/account-validation/:validationToken" >
+        {/* <Route path="/account-validation/:validationToken" > */}
+        <Route path="/account-validation" >
           <AccountValidation />
         </Route>
         <Route path="/forgotten-password">
