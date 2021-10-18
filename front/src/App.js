@@ -25,7 +25,7 @@ function App() {
   const contextValue = {
     setUser,
     getUser
-  }
+  };
 
   // Vérification si l'utilisateur est connecté
   useEffect(() => checkLoggedUser(setUser), []);

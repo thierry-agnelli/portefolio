@@ -8,7 +8,7 @@ import "./style.css"
 const AccountValidation = () => {
     /* Paramètres URL */
     const params = useParams();
-    const query = new URLSearchParams(useLocation().search);
+    //const query = new URLSearchParams(useLocation().search);
     /* Variables d'états */
     const [validated, setValidated] = useState(true);
     const [redirect, setRedirect] = useState(false);
@@ -21,8 +21,8 @@ const AccountValidation = () => {
                 "Accept": "application/json",
                 "Content-type": "application/json"
             },
-            // body: JSON.stringify({ validationToken: params.validationToken })
-            body: JSON.stringify({ validationToken: query.get("token") })
+            body: JSON.stringify({ validationToken: params.validationToken })
+            // body: JSON.stringify({ validationToken: query.get("token") })
         })
             // Si un compte a validé a été trouvé
             .then(response => {

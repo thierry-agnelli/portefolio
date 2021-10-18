@@ -38,8 +38,7 @@ const Body = () => {
         <Route path="/registration">
           <Registration />
         </Route>
-        {/* <Route path="/account-validation/:validationToken" > */}
-        <Route path="/account-validation" >
+        <Route path="/account-validation/:validationToken" >
           <AccountValidation />
         </Route>
         <Route path="/forgotten-password">

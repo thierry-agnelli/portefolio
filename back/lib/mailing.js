@@ -22,6 +22,15 @@ const senderInfos = {
     address: config.EMAIL
 }
 
+// Adresse Front
+const frontUrl = process.env.FRONT_URL || "http://localhost:3000";
+const buttonStyle = `background-color:#B04541;
+color:black;padding:0.75em;
+border-radius: 2em;
+margin-bottom:4em;
+text-decoration:none;
+margin:0 10em;`;
+
 export const accountValidationMail = (accountInfos) => {
 
     return new Promise((resolve, reject) => {
@@ -38,7 +47,9 @@ export const accountValidationMail = (accountInfos) => {
                     <br/>
                     <p>Vous venez de vous inscrire sur mon site, bienvenue à vous.</p>
                     <p>Merci de cliquer sur ce lien pour valider votre compte :</p>
-                    <p>${config.FRONT_URL}/account-validation?token=${accountInfos.validated}</p>
+                    <div style="display:flex">
+                        <a href="${config.FRONT_URL}/account-validation/${accountInfos.validated}" style="${buttonStyle}">Validation du compte</a>
+                    </div>
                     <br/>
                     <div><i>Thierry Agnelli</i></div>
                     <div><i>Développeur Fullstack Javascript/React/React Native/Node...etc </i></div>
@@ -49,7 +60,7 @@ export const accountValidationMail = (accountInfos) => {
             promptLog("Sending mail", "yellow");
             if (err)
                 reject(err);
-            else{
+            else {
                 promptLog("email sended", "green");
                 resolve("email sended");
             }
@@ -58,8 +69,9 @@ export const accountValidationMail = (accountInfos) => {
 };
 
 export const resetPasswordMail = (accountInfos) => {
-    
+    // Génération token
     const token = jwt.sign({ id: accountInfos._id }, config.KEY, { expiresIn: 1800 });
+
 
     // send mail with defined transport object
     const mailOptions = {
@@ -74,7 +86,9 @@ export const resetPasswordMail = (accountInfos) => {
                 <p>Si vous n'êtes pas à l'origine de cette demande, faites attention à vérifier vos mots de passes.</p>
                 <br/>
                 <p>Pour réinitialiser le mot de passe veuillez suivre ce lien (lien valide pendant 30mn):</p>
-                <p>${config.FRONT_URL}/reset-password/${token}</p>
+                <div style="display:flex">
+                    <a href="${frontUrl}/reset-password/${token}" style="${buttonStyle}">Réinitialisation du mot de passe</a>
+                </div>
                 <br/>
                 <div><i>Thierry Agnelli</i></div>
                 <div><i>Développeur Fullstack Javascript/React/React Native/Node...etc </i></div>
@@ -83,12 +97,12 @@ export const resetPasswordMail = (accountInfos) => {
 
     transporter.sendMail(mailOptions, (err, data) => {
         promptLog("Sending mail", "yellow");
-        
-        if (err){
+
+        if (err) {
             console.log(err);
             reject(err);
         }
-        else{
+        else {
             promptLog("email sended", "green");
             resolve("email sended");
         }
