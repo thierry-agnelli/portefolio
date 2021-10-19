@@ -4,18 +4,25 @@ import { Link } from "react-router-dom"
 import LogMenu from "./LogMenu/LogMenu.js";
 // Styles
 import "./style.css"
-
+// Images
+import myPic from "../../medias/images/profil.jpg";
 
 // Bannière du site
 const Banner = () => {
     return (
         <header id="banner">
             <div id="bannerLeftPart">
-                <div id="photo">Une zoulie photo</div>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img alt="photo-présentation" src={myPic} /></a>
             </div>
             <div id="bannerRightPart">
                 <div id="bannerSubRightPart">
-                    <LogMenu />
+                    <div id="presentationTitle">
+                        <h1>Thierry Agnelli</h1>
+                        <h2>Développeur Fullstack</h2>
+                    </div>
+                    <div id="logMenu">
+                        <LogMenu />
+                    </div>
                 </div>
                 <nav id="navMenu">
                     <ul>

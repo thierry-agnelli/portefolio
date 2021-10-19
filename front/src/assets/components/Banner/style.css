@@ -1,6 +1,6 @@
 /*Styles composant Bannière*/
 #banner{
-    min-height: 10em;
+    height: 8em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -10,36 +10,63 @@
 #bannerLeftPart{
     flex:1;
     min-width: 15em;
-    background-color: #65B04A;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #B04541;
+}
+
+#bannerLeftPart img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    padding: auto auto;
 }
 
 #bannerRightPart{
     flex:8;
     display:flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    background-color: #11632E;
+    /* background-image: url("../../medias/images//banner.jpg"); */
+    /* background-repeat: no-repeat; */
 }
 
 #bannerSubRightPart{
     flex:1;
+    display: flex;
+    justify-content: space-between;
 }
 
-#navMenu{
-    flex: 4;
+#presentationTitle{
+    margin-left : 0.5em;
+}
+
+#presentationTitle h1{
+    margin : 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+#presentationTitle h2{
+    margin : 0;
+    padding: 0 1em;
+    font-size: 1em;
 }
 
 #navMenu ul{
     display : flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: flex-end;
-    padding-top: 7.5em;
     list-style: none;
+    margin-bottom: 0;
+    padding-left: 0.75em;
 }
 
 #navMenu ul li{
-    margin : 0em 1em;
+    margin : 0em 4em 0.1em 0;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 @media (max-width: 720px){
@@ -47,14 +74,29 @@
         flex-direction: column;
     } */
 
-    #navMenu ul{
+    /* #navMenu ul{
         flex-direction: column;
         padding-top: 0;
         padding-left: 0;
         align-items: flex-start;
+    } */
+    #banner{
+        height : 10em;
+    }
+
+    #presentationTitle h1{
+        font-size: 1.2em;
+    }
+    
+    #presentationTitle h2{
+        font-size: 0.8em;
+    }
+
+    #navMenu ul {
+        margin-top : 0.5em;
     }
 
     #navMenu ul li{
-        margin : 0.25em 1em;
+        margin : 0.25em 0.5em;
     }
 }
