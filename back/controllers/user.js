@@ -9,7 +9,6 @@ import User from "../models/User.js"
 import { accountValidationMail } from "../lib/mailing.js"
 import { resetPasswordMail } from "../lib/mailing.js";
 import { promptLog } from "../lib/logs.js";
-import { response } from "express";
 
 
 /* Contrôler user */

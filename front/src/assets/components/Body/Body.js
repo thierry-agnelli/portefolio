@@ -2,6 +2,7 @@
 import { Switch, Route, Redirect } from "react-router";
 // Composants
 import Home from "../Home/Home";
+import Skills from "../Skills/Skills";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
 import AccountValidation from "../AccountValidation/AccountValidation";
@@ -24,7 +25,7 @@ const Body = () => {
           <Home />
         </Route>
         <Route path="/competences">
-          <Wip />
+          <Skills />
         </Route>
         <Route path="/realisations">
           <Wip />

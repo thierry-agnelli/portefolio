@@ -1,6 +1,6 @@
 // Dépendances
 import { useState, useEffect } from "react";
-import { useParams, Link, Redirect, useLocation } from "react-router-dom";
+import { useParams, Link, Redirect } from "react-router-dom";
 // Style
 import config from "../../../config.json";
 import "./style.css"
@@ -8,7 +8,6 @@ import "./style.css"
 const AccountValidation = () => {
     /* Paramètres URL */
     const params = useParams();
-    //const query = new URLSearchParams(useLocation().search);
     /* Variables d'états */
     const [validated, setValidated] = useState(true);
     const [redirect, setRedirect] = useState(false);

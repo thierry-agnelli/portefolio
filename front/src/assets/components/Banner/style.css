@@ -9,7 +9,7 @@
 
 #bannerLeftPart{
     flex:1;
-    min-width: 15em;
+    min-width: 10em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 #bannerRightPart{
-    flex:8;
+    flex:9;
     display:flex;
     flex-direction: column;
     background-color: #11632E;

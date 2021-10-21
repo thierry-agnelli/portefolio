@@ -12,7 +12,12 @@ const Home = () => {
 
     return (
         <div>
-            <div>Ici il y aura du contenu</div>
+            <div className="contentTitle">
+                <h4>Présentation</h4>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi voluptatum excepturi odio eveniet soluta nesciunt alias id natus ex nisi voluptates, neque quasi dolorem facere molestias, quod beatae delectus. Soluta!</p>
+            </div>
         </div>
     );
 }

@@ -81,3 +81,23 @@
     flex-direction: column;
     height: 100vh;
 }
+
+/* Contenu */
+.contentTitle{
+    height: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0.2em 0;
+}
+
+.contentTitle h4{
+    background-color: #B04541;
+    height: 100%;
+    margin: 0;
+    padding: 0em 1em;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    color: #FAFAFA;
+}
