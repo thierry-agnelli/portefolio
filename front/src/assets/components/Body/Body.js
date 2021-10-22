@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router";
 // Composants
 import Home from "../Home/Home";
 import Skills from "../Skills/Skills";
+import Contact from "../Contact/Contact";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
 import AccountValidation from "../AccountValidation/AccountValidation";
@@ -31,7 +32,7 @@ const Body = () => {
           <Wip />
         </Route>
         <Route path="/contact">
-          <Wip />
+          <Contact />
         </Route>
         <Route path="/login">
           <Login />

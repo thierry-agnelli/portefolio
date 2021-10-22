@@ -1,14 +1,8 @@
-// Dépendances
-import { useContext } from "react";
-// Context
-import { AppContext } from "../../../App";
 // Style
 import "./style.css";
 
 // Composant Acceuil
 const Home = () => {
-    // Context
-    const context = useContext(AppContext);
 
     return (
         <div>
@@ -16,8 +10,10 @@ const Home = () => {
                 <h4>Présentation</h4>
             </div>
             <div>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi voluptatum excepturi odio eveniet soluta nesciunt alias id natus ex nisi voluptates, neque quasi dolorem facere molestias, quod beatae delectus. Soluta!</p>
+                <div>Passionné par le développement à titre de loisir, j’ai décidé de réorienter ma carrière professionelle dans ce sens.</div>
+                <div>J’ai choisi le domaine du web et du mobile car il s’agit d’un secteur déjà profondément ancré dans notre société et l’avenir des marchés passera forcément par ces technologies.</div>
             </div>
+            <a href="http://www.tagnelli.fr/realisations/todolist/index.html" target="_blank">test</a>
         </div>
     );
 }

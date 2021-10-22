@@ -44,7 +44,7 @@ const Skills = () => {
 
     return (
         <div>
-            <div id="skillTitle">
+            <div className="pageTitle">
                 <h3>Compétences</h3>
             </div>
             <div id="skillContainer">
@@ -64,6 +64,6 @@ const Skills = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Skills;

@@ -1,6 +1,6 @@
 // Dépendances
 import { useState, useRef, useEffect } from "react";
-import { Link, useParams, Redirect } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // Config
 import config from "../../../config.json"
 // Style

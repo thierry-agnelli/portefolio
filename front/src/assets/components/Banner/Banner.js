@@ -5,7 +5,7 @@ import LogMenu from "./LogMenu/LogMenu.js";
 // Styles
 import "./style.css"
 // Images
-import myPic from "../../medias/images/profil.jpg";
+import myPic from "../../medias/images/pi_ta.jpg";
 
 // Bannière du site
 const Banner = () => {

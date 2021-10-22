@@ -1,14 +1,4 @@
-#skillTitle{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.5em;
-    margin: 0;
-}
 
-#skillTitle h3{
-    margin: 0;
-}
 #skillContainer{
     margin-left: 5em;
 }
