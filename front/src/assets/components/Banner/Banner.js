@@ -12,7 +12,7 @@ const Banner = () => {
     return (
         <header id="banner">
             <div id="bannerLeftPart">
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img alt="photo-présentation" src={myPic} /></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img alt="thierry_agnelli" src={myPic} /></a>
             </div>
             <div id="bannerRightPart">
                 <div id="bannerSubRightPart">
@@ -29,7 +29,7 @@ const Banner = () => {
                         <li><Link to="/accueil" className="link">Accueil</Link></li>
                         <li><Link to="/competences" className="link">Compétences</Link></li>
                         <li><Link to="/realisations" className="link">Réalisations</Link></li>
-                        <li><Link to="/contact" className="link">Contact</Link></li>
+                        <li><Link to="/contact" className="link">Me contacter</Link></li>
                     </ul>
                 </nav>
             </div>

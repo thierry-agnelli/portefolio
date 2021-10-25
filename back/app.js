@@ -4,6 +4,7 @@ import cors from "cors";
 // Routes
 import userRoute from "./routes/user.js";
 import skillRoute from "./routes/skill.js";
+import messageRouter from "./routes/message.js";
 
 // Création app
 const app = express()
@@ -17,6 +18,7 @@ app.use(express.json());
 // Routes
 app.use("/user", userRoute);
 app.use("/skill", skillRoute);
+app.use("/message", messageRouter);
 
 // Home
 app.get("/", (req, res) => {
@@ -24,5 +26,3 @@ app.get("/", (req, res) => {
 });
 
 export default app;
-
-;

@@ -50,6 +50,7 @@
     border-radius: 2em;
     background-color: darkgrey;
     transition: 0.25s;
+    font-weight: bold;
 }
 
 .formButton:hover{
