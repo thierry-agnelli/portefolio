@@ -1,6 +1,6 @@
 // Dépendances
 import { useState, createContext, useEffect } from "react";
-import { HashRouter, BrowserRouter as Browser } from "react-router-dom";
+import { BrowserRouter as Browser } from "react-router-dom";
 // Composants
 import Banner from './assets/components/Banner/Banner';
 import Body from './assets/components/Body/Body';
@@ -33,12 +33,12 @@ function App() {
 
   return (
     <AppContext.Provider value={contextValue}>
-      <HashRouter basename="/">
+      <Browser>
         <div id="mainContainer">
           <Banner />
           <Body />
         </div>
-      </HashRouter>
+      </Browser>
     </AppContext.Provider>
   );
 }
