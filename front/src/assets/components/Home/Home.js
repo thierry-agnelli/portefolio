@@ -1,11 +1,11 @@
 // Style
-import "./style.css";
+import "./style.css"
 
 // Composant Acceuil
 const Home = () => {
 
     return (
-        <div>
+        <div id="homeContainer">
             <div className="contentTitle">
                 <h4>Présentation</h4>
             </div>

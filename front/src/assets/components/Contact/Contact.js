@@ -1,5 +1,5 @@
 // Dépendances
-import { useState, useRef, useContext , useEffect } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 // Config
 import config from "../../../config.json";
@@ -13,7 +13,7 @@ const Contact = () => {
     const context = useContext(AppContext);
 
     // Variables d'état
-    const [user, setuser] = useState(context.getUser() ? context.getUser() : null )
+    const [user, setuser] = useState(context.getUser() ? context.getUser() : null)
     const [messageData, setMessageData] = useState({
         firstName: "",
         lastName: "",
@@ -31,10 +31,12 @@ const Contact = () => {
     };
 
     useEffect(() => {
-        references.firstName.current.value = user.firstName;
-        references.lastName.current.value = user.lastName;
-        references.email.current.value = user.email;
-    },[user])
+        if (user) {
+            references.firstName.current.value = user.firstName;
+            references.lastName.current.value = user.lastName;
+            references.email.current.value = user.email;
+        }
+    }, [user])
 
     /* Handler */
     // Data Input
@@ -77,7 +79,7 @@ const Contact = () => {
                 },
                 body: JSON.stringify(messageData)
             })
-            .then(response => setSuccess(true));
+                .then(response => setSuccess(true));
         }
     };
 
@@ -105,7 +107,7 @@ const Contact = () => {
                 <>
                     <div>Votre message a bien été enregistré.</div>
                 </>}
-                <Link to="/accueil" className="link">Retour à l'accueil</Link>
+            <Link to="/accueil" className="link">Retour à l'accueil</Link>
         </div>
     );
 };

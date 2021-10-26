@@ -81,7 +81,7 @@ const Login = () => {
                     context.setUser(json);
 
                     // Enregistrement des données utilisateurs en session ou local storage
-                    if(stayLogged)
+                    if (stayLogged)
                         // localStorage.setItem("user", JSON.stringify(json));
                         localStorage.setItem("session", JSON.stringify(json));
                     else
@@ -102,30 +102,32 @@ const Login = () => {
     }
 
     return (
-            <div id="loginContainer">
-                <h2>Connectez-vous</h2>
-                <form>
-                    <div className="formContainer">
-                        <div id="loginTopRowContainer" className="labelRow">
-                            <label htmlFor="loginEmailInput">E-mail : <span className="requiredField">*</span></label>
-                            <Link to="/forgotten-password" className="link forgottenPwd">Mot de passe oublié</Link>
-                        </div>
-                        <input type="email" id="loginEmailInput" onChange={emailInput} ref={emailInputRef} />
-                        <label htmlFor="loginPwdInput" className="labelRow">Mot de passe : <span className="requiredField">*</span></label>
-                        <input type="password" id="loginPwdInput" onChange={pwdInput} ref={pwdInputRef} />
-                    </div>
-                    <div id="stayLoggedContainer">
-                        <input type="checkbox" id="stayLogged" onClick={stayLoggedChange} />
-                        <label htmlFor="stayLogged">Rester connecté</label>
-                    </div>
-                </form>
-                <button id="loginBtn" className="formButton" onClick={loginBtnClick}>Connexion</button>
-                <Link to="/registration" id="registerLink" className="link">Pas encore inscrit ?</Link>
-                <div className="error">{error ? error: null}</div>
-                <Link to="/accueil" className="link" >Retour à l'accueil</Link>
-                {/* Redirection vers accueil si réussite de connexion ou si déjà connecté */}
-                {logInSucces || context.getUser() ? <Redirect to="/accueil"/>: null}
+        <div id="loginContainer">
+            <div className="pageTitle">
+                <h3>Connectez-vous</h3>
             </div>
+            <form>
+                <div className="formContainer">
+                    <div id="loginTopRowContainer" className="labelRow">
+                        <label htmlFor="loginEmailInput">E-mail : <span className="requiredField">*</span></label>
+                        <Link to="/forgotten-password" className="link forgottenPwd">Mot de passe oublié</Link>
+                    </div>
+                    <input type="email" id="loginEmailInput" onChange={emailInput} ref={emailInputRef} />
+                    <label htmlFor="loginPwdInput" className="labelRow">Mot de passe : <span className="requiredField">*</span></label>
+                    <input type="password" id="loginPwdInput" onChange={pwdInput} ref={pwdInputRef} />
+                </div>
+                <div id="stayLoggedContainer">
+                    <input type="checkbox" id="stayLogged" onClick={stayLoggedChange} />
+                    <label htmlFor="stayLogged">Rester connecté</label>
+                </div>
+            </form>
+            <button id="loginBtn" className="formButton" onClick={loginBtnClick}>Connexion</button>
+            <Link to="/registration" id="registerLink" className="link">Pas encore inscrit ?</Link>
+            <div className="error">{error ? error : null}</div>
+            <Link to="/accueil" className="link" >Retour à l'accueil</Link>
+            {/* Redirection vers accueil si réussite de connexion ou si déjà connecté */}
+            {logInSucces || context.getUser() ? <Redirect to="/accueil" /> : null}
+        </div>
     );
 };
 

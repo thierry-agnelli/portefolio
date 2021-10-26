@@ -17,8 +17,8 @@ const LogMenu = () => {
     const unlog = () => {
         context.setUser(null);
 
-        sessionStorage.removeItem("user");
-        localStorage.removeItem("user");
+        sessionStorage.removeItem("session");
+        localStorage.removeItem("session");
     }
 
     return (
