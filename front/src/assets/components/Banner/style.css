@@ -27,9 +27,6 @@
     flex:9;
     display:flex;
     flex-direction: column;
-    background-color: #11632E;
-    /* background-image: url("../../medias/images//banner.jpg"); */
-    /* background-repeat: no-repeat; */
 }
 
 #bannerSubRightPart{
@@ -67,19 +64,11 @@
     margin : 0em 4em 0.1em 0;
     font-weight: bold;
     font-size: 1.2em;
+    
 }
 
 @media (max-width: 720px){
-    /* #bannerRightPart{
-        flex-direction: column;
-    } */
 
-    /* #navMenu ul{
-        flex-direction: column;
-        padding-top: 0;
-        padding-left: 0;
-        align-items: flex-start;
-    } */
     #banner{
         height : 10em;
     }

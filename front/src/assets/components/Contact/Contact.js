@@ -1,13 +1,19 @@
 // Dépendances
-import { useState, useRef } from "react";
+import { useState, useRef, useContext , useEffect } from "react";
 import { Link } from "react-router-dom";
 // Config
 import config from "../../../config.json";
+// Context
+import { AppContext } from "../../../App";
 // Style
 import "./style.css";
 
 const Contact = () => {
+    // Context
+    const context = useContext(AppContext);
+
     // Variables d'état
+    const [user, setuser] = useState(context.getUser() ? context.getUser() : null )
     const [messageData, setMessageData] = useState({
         firstName: "",
         lastName: "",
@@ -23,6 +29,12 @@ const Contact = () => {
         email: useRef(null),
         message: useRef(null),
     };
+
+    useEffect(() => {
+        references.firstName.current.value = user.firstName;
+        references.lastName.current.value = user.lastName;
+        references.email.current.value = user.email;
+    },[user])
 
     /* Handler */
     // Data Input

@@ -77,6 +77,7 @@ const Login = () => {
                         throw response;
                 })
                 .then(json => {
+                    console.log(json);
                     context.setUser(json);
 
                     // Enregistrement des données utilisateurs en session ou local storage

@@ -1,3 +1,8 @@
+/* Principal */
+#mainContainer{
+    background-color: #FAFAFA;
+}
+
 /* Classes Globales */
 .link{
     cursor: pointer;
@@ -8,7 +13,7 @@
 
 .link:hover{
     text-decoration: underline;
-    color: darkgrey;
+    color: #11632E;
     transition: color 0.25s;
 }
 
@@ -38,6 +43,7 @@
     margin-bottom: 1.5em;
     border: none;
     border-bottom: 1px solid black;
+    background-color: #FAFAFA;
 }
 
 .formButton{

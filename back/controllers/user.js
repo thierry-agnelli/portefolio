@@ -110,6 +110,7 @@ const userController = {
                 id: result._id,
                 firstName: result.firstName,
                 lastName: result.lastName,
+                email: result.email,
                 authToken: authentificationToken
               });
             }
