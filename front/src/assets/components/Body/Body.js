@@ -3,9 +3,11 @@ import { Switch, Route, Redirect } from "react-router";
 // Composants
 import Home from "../Home/Home";
 import Skills from "../Skills/Skills";
+import Makings from "../Makings/Makings";
 import Contact from "../Contact/Contact";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
+import Admin from "../Admin/Admin";
 import AccountValidation from "../AccountValidation/AccountValidation";
 import ForgottenPwd from "../ForgottentPwd/ForgottentPwd";
 import ResetPassword from "../ResetPassword/ResetPassword";
@@ -29,7 +31,7 @@ const Body = () => {
           <Skills />
         </Route>
         <Route path="/realisations">
-          <Wip />
+          <Makings />
         </Route>
         <Route path="/contact">
           <Contact />
@@ -39,6 +41,9 @@ const Body = () => {
         </Route>
         <Route path="/registration">
           <Registration />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
         <Route path="/account-validation/:validationToken" >
           <AccountValidation />

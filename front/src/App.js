@@ -7,7 +7,7 @@ import Body from './assets/components/Body/Body';
 // Styles
 import './App.css';
 // Méthodes
-import { checkLoggedUser } from "./assets/components/lib/logMethod";
+import { checkLoggedUser } from "./assets/lib/logMethod";
 
 
 // Contexte
@@ -16,7 +16,6 @@ export const AppContext = createContext();
 function App() {
   /* Variebles d'états */
   const [user, setUser] = useState(null);
-  // const [user, setUser] = useState(localStorage.getItem("user") ? localStorage.getItem("user") : null);
 
   /* Fonctions */
   const getUser = () => user;
@@ -26,6 +25,8 @@ function App() {
     setUser,
     getUser
   };
+
+  useEffect(() => console.log(user), [user]);
 
   // Vérification si l'utilisateur est connecté
   useEffect(() => checkLoggedUser(setUser), []);

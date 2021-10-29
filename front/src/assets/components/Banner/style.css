@@ -51,6 +51,10 @@
     font-size: 1em;
 }
 
+#navMenu{
+    border-top: 3px solid #B04541;
+}
+
 #navMenu ul{
     display : flex;
     flex-flow: row wrap;

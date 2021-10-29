@@ -1,5 +1,5 @@
 // Config
-import config from "../../../config.json";
+import config from "../../config.json";
 
 // Vérifications si l'utilisateur est connecté
 export const checkLoggedUser = (setUser) => {
