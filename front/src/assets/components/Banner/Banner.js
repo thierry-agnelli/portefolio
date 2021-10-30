@@ -15,7 +15,7 @@ const Banner = () => {
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img alt="thierry_agnelli" src={myPic} /></a>
             </div>
             <div id="bannerRightPart">
-                <div id="bannerSubRightPart">
+                <div id="bannerRightPartTop">
                     <div id="presentationTitle">
                         <h1>Thierry Agnelli</h1>
                         <h2>Développeur Fullstack</h2>
@@ -24,14 +24,17 @@ const Banner = () => {
                         <LogMenu />
                     </div>
                 </div>
-                <nav id="navMenu">
-                    <ul>
-                        <li><Link to="/accueil" className="link">Accueil</Link></li>
-                        <li><Link to="/competences" className="link">Compétences</Link></li>
-                        <li><Link to="/realisations" className="link">Réalisations</Link></li>
-                        <li><Link to="/contact" className="link">Me contacter</Link></li>
-                    </ul>
-                </nav>
+                <div id="bannerRightPartBottom">
+                    <nav id="navMenu">
+                        <ul>
+                            <li><Link to="/accueil" className="link">Accueil</Link></li>
+                            <li><Link to="/competences" className="link">Compétences</Link></li>
+                            <li><Link to="/realisations" className="link">Réalisations</Link></li>
+                            <li><Link to="/contact" className="link">Me contacter</Link></li>
+                        </ul>
+                    </nav>
+                    <div id="navMenuRightPart"/>
+                </div>
             </div>
         </header>
     );

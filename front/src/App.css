@@ -87,6 +87,10 @@
     margin: 0;
 }
 
+.contentArticle{
+    margin-bottom: 2em;
+}
+
 .contentTitle{
     height: 2em;
     display: flex;
