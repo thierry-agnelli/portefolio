@@ -2,6 +2,8 @@
 #mainContainer{
     height: 100%;
     padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Classes Globales */

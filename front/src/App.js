@@ -4,6 +4,7 @@ import { BrowserRouter as Browser } from "react-router-dom";
 // Composants
 import Banner from './assets/components/Banner/Banner';
 import Body from './assets/components/Body/Body';
+import Footer from "./assets/components/Footer/Footer";
 // Styles
 import './App.css';
 // Méthodes
@@ -38,6 +39,7 @@ function App() {
         <div id="mainContainer">
           <Banner />
           <Body />
+          <Footer/>
         </div>
       </Browser>
     </AppContext.Provider>

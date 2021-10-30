@@ -1,6 +1,7 @@
 /*Styles composant Bannière*/
 #banner{
-    height: 8em;
+    flex-basis: 10vh;
+    min-height: 8em;
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -1,1 +1,4 @@
 /*Styles composant Body*/
+#contentContainer{
+    flex-basis: 75vh;
+}

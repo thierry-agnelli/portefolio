@@ -1,0 +1,19 @@
+#footer{
+    flex-basis: 10vh;
+    border-top: 1px solid darkgrey;
+    padding:1em;
+    color: darkgrey;
+    font-size: 0.9em;
+}
+
+#footerLinkContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5em;
+}
+
+#footerLinkContainer a{
+    text-decoration: none;
+    color: darkgrey;
+    font-size: 0.8em;
+}
