@@ -19,6 +19,7 @@ const Banner = () => {
                     <div id="presentationTitle">
                         <h1>Thierry Agnelli</h1>
                         <h2>Développeur Fullstack</h2>
+                        <div>Disponible</div>
                     </div>
                     <div id="logMenu">
                         <LogMenu />
@@ -28,7 +29,7 @@ const Banner = () => {
                     <nav id="navMenu">
                         <ul>
                             <li><Link to="/accueil" className="link">Accueil</Link></li>
-                            <li><Link to="/competences" className="link">Compétences</Link></li>
+                            <li><Link to="/experiences" className="link">Expériences</Link></li>
                             <li><Link to="/realisations" className="link">Réalisations</Link></li>
                             <li><Link to="/contact" className="link">Me contacter</Link></li>
                         </ul>

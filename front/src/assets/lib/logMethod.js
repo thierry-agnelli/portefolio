@@ -12,7 +12,6 @@ export const checkLoggedUser = (setUser) => {
         loggedUser = JSON.parse(sessionStorage.getItem("session"));
 
     if(loggedUser){
-
         fetch(`${config.API_URL}/user/authToken-validation/${loggedUser.authToken}`)
             .then(response => {
                 if (response.status === 200)
@@ -23,9 +22,10 @@ export const checkLoggedUser = (setUser) => {
             .catch(err => {
                 err.text()
                     .then(message => {
+                        console.log(message);
                         // Nettoyage des informations erronées dans les storage 
-                        localStorage.removeItem("user");
-                        sessionStorage.removeItem("user");
+                        localStorage.removeItem("session");
+                        sessionStorage.removeItem("session");
                     });
             });
     }

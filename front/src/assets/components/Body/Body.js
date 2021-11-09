@@ -30,8 +30,11 @@ const Body = () => {
         <Route path="/competences">
           <Skills />
         </Route>
+        <Route path="/experiences">
+          <Wip />
+        </Route>
         <Route path="/realisations">
-          <Makings />
+          <Wip />
         </Route>
         <Route path="/contact">
           <Contact />

@@ -2,9 +2,10 @@
 import mongoose from "mongoose";
 
 const skillSchema = new mongoose.Schema({
-    Category: { type: String, require: true },
-    Order: {type: Number, required: true},
-    Name: { type: String, unique: true, required: true },
+    category: { type: String, require: true },
+    order: {type: Number, required: true},
+    name: { type: String, unique: true, required: true },
+    info: String
 }, { collection: "Skills" });
 
 export default mongoose.model("Skills", skillSchema);

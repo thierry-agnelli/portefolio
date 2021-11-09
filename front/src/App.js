@@ -27,11 +27,8 @@ function App() {
     getUser
   };
 
-  useEffect(() => console.log(user), [user]);
-
   // Vérification si l'utilisateur est connecté
   useEffect(() => checkLoggedUser(setUser), []);
-
 
   return (
     <AppContext.Provider value={contextValue}>

@@ -5,6 +5,7 @@ import cors from "cors";
 import userRoute from "./routes/user.js";
 import skillRoute from "./routes/skill.js";
 import messageRouter from "./routes/message.js";
+import infoRouter from "./routes/info.js";
 
 // Création app
 const app = express()
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/user", userRoute);
 app.use("/skill", skillRoute);
 app.use("/message", messageRouter);
+app.use("/info", infoRouter);
 
 // Home
 app.get("/", (req, res) => {

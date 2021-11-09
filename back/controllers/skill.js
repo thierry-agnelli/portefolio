@@ -13,7 +13,7 @@ const skillControleur = {
         // Recherche en base des données des infos compétences
         Skill.find()
             .then(results => {
-                if (results){
+                if (results) {
                     promptLog("Skill category data found", "green");
                     res.status(200).json(results);
                 }

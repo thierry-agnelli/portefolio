@@ -86,10 +86,9 @@ const userController = {
   // Authentification connexion
   authentification: (req, res) => {
     promptLog(`login attempt: ${req.body.email}`, "yellow");
-
+    console.log(req.body);
     User.findOne({ email: req.body.email })
       .then(result => {
-
         // Si un utilisateur a été trouvé
         if (result) {
           promptLog("User found", "yellow");
@@ -99,8 +98,8 @@ const userController = {
             if (result.validated === "true") {
               // Génération token d'authentification
               let authentificationToken;
-
-              if (req.body.stayrLogged)
+              
+              if (req.body.stayLogged)
                 authentificationToken = jwt.sign({ id: result._id }, config.KEY);
               else
                 authentificationToken = jwt.sign({ id: result._id }, config.KEY, { expiresIn: "2h" });
@@ -155,6 +154,7 @@ const userController = {
     // Vérification du token
     try {
       const isValidToken = jwt.verify(req.params.token, config.KEY);
+
       // Si token valid vérification si un user existe pour cet id
       User.findOne({ _id: isValidToken.id })
         .then((result) => {

@@ -4,16 +4,29 @@
     padding:1em;
     color: darkgrey;
     font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+}
+
+#footerLinkTitle{
+    flex: 1;
 }
 
 #footerLinkContainer{
     display: flex;
     flex-direction: column;
     margin: 0 0.5em;
+    flex : 3;
 }
 
 #footerLinkContainer a{
     text-decoration: none;
     color: darkgrey;
     font-size: 0.8em;
+    
+}
+
+#footerBottomLine{
+    flex: 1;
+    align-self: center;
 }
