@@ -4,7 +4,7 @@ import Message from "../models/Message.js";
 import { promptLog } from "../lib/logs.js";
 import { contactMessageReceivedMail } from "../lib/mailing.js";
 
-// Contrôleur message
+/* Contrôleur message */
 const messageController = {
     receiveMessage: (req, res) => {
         promptLog("Received contact message", "yellow");

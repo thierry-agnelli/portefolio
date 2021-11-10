@@ -4,9 +4,10 @@ import Qualification from "../models/Qualification.js";
 // Lib
 import { promptLog } from "../lib/logs.js";
 
+/* Contrôleur infos */
 const infoController = {
     getAll: (req, res) => {
-        promptLog("Getting all skills infos", "yellow");
+        promptLog("Getting all skills info", "yellow");
         let skills = null;
         let qualifications = null;
 

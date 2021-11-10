@@ -87,9 +87,7 @@ const Contact = () => {
         <div id="contactContainer">
             {!success ?
                 <>
-                    <div className="pageTitle">
-                        <h3>Me contacter</h3>
-                    </div>
+                    <h3 className="pageTitle">ME CONTACTER</h3>
                     <form id="contactForm">
                         <div className="formContainer">
                             <label htmlFor="contactInput_lastName" className="labelRow">Nom :<span className="requiredField">*</span></label>

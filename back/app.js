@@ -6,6 +6,7 @@ import userRoute from "./routes/user.js";
 import skillRoute from "./routes/skill.js";
 import messageRouter from "./routes/message.js";
 import infoRouter from "./routes/info.js";
+import experienceRouter from "./routes/experiences.js";
 
 // Création app
 const app = express()
@@ -21,6 +22,8 @@ app.use("/user", userRoute);
 app.use("/skill", skillRoute);
 app.use("/message", messageRouter);
 app.use("/info", infoRouter);
+app.use("/experience", experienceRouter);
+
 
 // Home
 app.get("/", (req, res) => {
