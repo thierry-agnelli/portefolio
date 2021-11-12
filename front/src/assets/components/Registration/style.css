@@ -1,11 +1,27 @@
-#registrationContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#registrationContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#registrationForm{
-    display: flex;
-    flex-direction: column;
-    
+#registrationContainer #registrationForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+/*# sourceMappingURL=style.css.map */

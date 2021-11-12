@@ -1,57 +1,72 @@
-#homeContainer{
-    margin: 2em;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#homeContainer {
+  margin: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.infoContainer{
-    border: 3px ridge darkgrey;
-    width: 35vh;
-    padding-bottom: 0.5em;
-    box-shadow: 5px 5px 5px grey;
-    margin : 1em 0;
+#homeContainer .infoContainer {
+  border: 3px ridge darkgrey;
+  width: 35vh;
+  min-width: 15em;
+  padding-bottom: 0.5em;
+  -webkit-box-shadow: 5px 5px 5px grey;
+          box-shadow: 5px 5px 5px grey;
+  margin: 1em 0;
 }
 
-.infoContainer h3{
-    text-align: center;
-    margin: 0;
-    padding: 0.3em 0;
-    border-bottom: 3px ridge darkgrey;
-    background-color: #B04541;
+#homeContainer .infoContainer h3 {
+  text-align: center;
+  margin: 0;
+  padding: 0.3em 0;
+  border-bottom: 3px ridge darkgrey;
+  background-color: #B04541;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5em;
 }
 
-.infoContent{
-    padding: 0.5em 0.5em 0 0.5em;
+#homeContainer .infoContainer .infoContent {
+  padding: 0.5em 0.5em 0 0.5em;
 }
 
-.infoContent h4{
-    margin: 0;
+#homeContainer .infoContainer .infoContent h4 {
+  margin: 0;
 }
 
-#infoIcon{
-    margin : 0 0.2em;
-    color : darkgrey;
+#homeContainer .infoContainer .infoItemList {
+  margin: 0;
+  padding: 0.25em 0.5em 0 1em;
+  list-style: none;
 }
 
-.infoItemList{
-    margin: 0;
-    padding: 0.25em 0.5em 0 1em;
-    list-style: none;
+#homeContainer .infoContainer .infoItemList #infoIcon {
+  margin: 0 0.2em;
+  color: darkgrey;
 }
 
-#presentationText{
-    padding: 0.4em;
+#homeContainer .infoContainer #presentationText {
+  padding: 0.4em;
 }
 
-#infoToolTip{
-    position: absolute;
-    border: 3px ridge darkgrey;
-    background-color: white;
-    padding: 0.5em;
-    visibility: hidden;
+#homeContainer #infoToolTip {
+  position: absolute;
+  border: 3px ridge darkgrey;
+  background-color: white;
+  padding: 0.5em;
+  visibility: hidden;
 }
 
-#infoToolTipTitle{
-    font-weight: bold;
+#homeContainer #infoToolTipTitle {
+  font-weight: bold;
 }
+/*# sourceMappingURL=style.css.map */

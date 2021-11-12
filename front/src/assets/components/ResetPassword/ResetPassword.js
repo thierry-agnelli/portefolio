@@ -103,7 +103,7 @@ const ResetPassword = () => {
                 {validToken ?
                     <>
                         {!pwdUpdated ? <>
-                            <h2>Réinitialisation du mot de passe</h2>
+                            <h3>REINITIALISATIONDU MOT DE PASSE</h3>
                             <form>
                                 <div className="formContainer">
                                     <label htmlFor="newPwdInput" className="labelRow">Nouveau mot de passe : <span className="requiredField">*</span></label>

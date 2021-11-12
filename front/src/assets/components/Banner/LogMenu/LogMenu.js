@@ -28,7 +28,7 @@ const LogMenu = () => {
                 {context.getUser() ?
                 <div id="currentUserContainer">
                     <div>{`${context.getUser().lastName} ${context.getUser().firstName}`}</div>
-                    <div className="link" onClick={unlog}>Déconnexion</div>
+                    <div id="unlog" className="link" onClick={unlog}>Déconnexion</div>
                 </div> :
                 <Link to="/login" className="link">Se connecter</Link>}
             </div>

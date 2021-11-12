@@ -8,9 +8,7 @@ const Makings = () => {
 
     return (
         <div id="makingsContainer">
-            <div className="pageTitle">
-                <h3>Réalisations</h3>
-            </div>
+            <h3 className="pageTitle">REALISATIONS</h3>
             <div id="makingsList">
                 <div className="makingItem">
                     <img alt="app_image" src={imgNotFound}/>

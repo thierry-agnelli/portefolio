@@ -1,34 +1,49 @@
-#loginContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#loginContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#loginContainer h2{
-    font-size: 2.5em;
+#loginContainer #loginTopRowContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#loginContainer button:hover{
-    background-color: #B04541;
+#loginContainer #stayLoggedContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 1.5em;
 }
 
-#loginTopRowContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+#loginContainer .forgottenPwd {
+  font-size: 0.75em;
 }
 
-#stayLoggedContainer{
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 1.5em;
+#loginContainer #registerLink {
+  font-size: 0.9em;
+  margin-top: 0.3em;
 }
-
-.forgottenPwd{
-    font-size: 0.75em;
-}
-
-#registerLink{
-    font-size: 0.9em;
-    margin-top: 0.3em;
-}
+/*# sourceMappingURL=style.css.map */

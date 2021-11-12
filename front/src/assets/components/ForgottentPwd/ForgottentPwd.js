@@ -40,7 +40,7 @@ const ForgottenPwd = () => {
 
     return (
         <div id="forgottenPwdContainer">
-            <h2>Mot de passe oublié</h2>
+            <h3>Mot de passe oublié</h3>
             {!requestSended ?
             <>
             <form className="formContainer">

@@ -44,9 +44,7 @@ const Skills = () => {
 
     return (
         <div>
-            <div className="pageTitle">
-                <h3>Compétences</h3>
-            </div>
+            <h3 className="pageTitle">COMPETENCES</h3>
             <div id="skillContainer">
                 {categories.map((item, index) =>
                     <div key={`${index}_${item.category}`}>

@@ -152,9 +152,7 @@ const Registration = () => {
         <div id="registrationContainer">
             {!success ?
                 <>
-                    <div className="pageTitle">
-                        <h3>Inscription</h3>
-                    </div>
+                    <h3 className="pageTitle">INSCRIPTION</h3>
                     <form id="registrationForm">
                         <div className="formContainer">
                             <label className="LabelRow" htmlFor="registerInput_email">E-mail : <span className="requiredField">*</span></label>

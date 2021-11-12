@@ -1,39 +1,69 @@
-#makingsContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#makingsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#makingsList{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    width: 100%;
+#makingsContainer #makingsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
 }
 
-.makingItem{
-    margin: 1em 0em;
-    padding: 0.3em;
-    border: 0.3em ridge #EEEEEE;
-    border-radius: 0.35em;
-    height: 18em;
-    width: 15em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#makingsContainer #makingsList .makingItem {
+  margin: 1em 0em;
+  padding: 0.3em;
+  border: 0.3em ridge #EEEEEE;
+  border-radius: 0.35em;
+  height: 18em;
+  width: 15em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.makingItem img{
-    width: 100%;    
+#makingsContainer #makingsList .makingItem img {
+  width: 100%;
 }
 
-.makingItemInfos{
-    width: 100%;
-    margin-top: 0.75em;
-    display: flex;
-    flex-direction: column;
+#makingsContainer #makingsList .makingItem .makingItemInfos {
+  width: 100%;
+  margin-top: 0.75em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.makingItemTitle{
-    font-weight: bold;
+#makingsContainer #makingsList .makingItem .makingItemInfos .makingItemTitle {
+  font-weight: bold;
 }
+/*# sourceMappingURL=style.css.map */

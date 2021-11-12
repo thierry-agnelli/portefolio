@@ -1,25 +1,44 @@
-#LogContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0.5em;
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#LogContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5em;
 }
 
-#userIcon{
-    padding: 0.5em;
-    height: 1.5em;
-    width: 1.5em;
-    border-radius: 100%;
-    background-color: #B04541;
+#LogContainer #userIcon {
+  padding: 0.5em;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 100%;
+  background-color: #B04541;
 }
 
-#logTextContainer{
-    padding: 0.5em;
-    height: 1.5em;
-    width: 6em;
+#LogContainer #logTextContainer {
+  padding: 0.5em;
+  height: 1.5em;
+  width: 6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-#currentUserContainer{
-    font-size: 0.9em;
+#LogContainer #logTextContainer #currentUserContainer {
+  font-size: 0.9em;
 }
+
+#LogContainer #logTextContainer #currentUserContainer #unlog {
+  color: darkgrey;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

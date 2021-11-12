@@ -1,0 +1,110 @@
+// Règles
+@import "./assets/styleRules/styleRules.scss";
+
+/* Principal */
+#mainContainer{
+    height: 100%;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    font-family: $mainFont;
+}
+
+/* Classes Globales */
+.link{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: color 0.25s;
+}
+
+.link:hover{
+    text-decoration: underline;
+    color: $mainColor;
+    transition: color 0.25s;
+}
+
+/* Formulaires */
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    width:20vw;
+}
+
+.labelRow{
+    margin-bottom: 0.5em;
+    width: 20vw;
+    min-width: 20em;
+    max-width: 30em;
+}
+
+.formContainer label{
+    font-weight: bold;
+}
+
+.formContainer input{
+    width: 100%;
+    height: 2.2em;
+    margin-bottom: 1.5em;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.formButton{
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    width: 20vw;
+    min-width: 20em;
+    max-width: 30em;
+    height: 2.5em;
+    border: none;
+    border-radius: 2em;
+    background-color: darkgrey;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+.formButton:hover{
+    background-color: $mainColor;
+}
+
+.requiredField{
+    color: red;
+}
+
+.formInputError{
+    background-color: #FFBBBB;
+    border-color: 1px solid red;
+    border-radius: 0.3em 0.3em 0 0;
+    color: red;
+}
+
+/* Messages d'erreurs*/
+.error{
+    margin: 1em;
+    color: red;
+    font-weight: bold;
+}
+
+/* Contenu */
+.pageTitle{
+    font-size: 1.6em;
+    margin: 2.5em 0 2em 0;
+    text-align: center;
+}
+
+.contentArticle{
+    margin: 3.5em 5em;
+    padding-left: 2em;
+}
+
+.contentTitle{
+    height: 100%;
+    display: flex;
+    margin: 0.2em 0 0.75em 0em;
+    padding: 0.5em 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px double $mainColor;
+}

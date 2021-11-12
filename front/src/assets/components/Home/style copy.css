@@ -1,0 +1,57 @@
+#homeContainer{
+    margin: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.infoContainer{
+    border: 3px ridge darkgrey;
+    width: 35vh;
+    padding-bottom: 0.5em;
+    box-shadow: 5px 5px 5px grey;
+    margin : 1em 0;
+}
+
+.infoContainer h3{
+    text-align: center;
+    margin: 0;
+    padding: 0.3em 0;
+    border-bottom: 3px ridge darkgrey;
+    background-color: #B04541;
+}
+
+.infoContent{
+    padding: 0.5em 0.5em 0 0.5em;
+}
+
+.infoContent h4{
+    margin: 0;
+}
+
+#infoIcon{
+    margin : 0 0.2em;
+    color : darkgrey;
+}
+
+.infoItemList{
+    margin: 0;
+    padding: 0.25em 0.5em 0 1em;
+    list-style: none;
+}
+
+#presentationText{
+    padding: 0.4em;
+}
+
+#infoToolTip{
+    position: absolute;
+    border: 3px ridge darkgrey;
+    background-color: white;
+    padding: 0.5em;
+    visibility: hidden;
+}
+
+#infoToolTipTitle{
+    font-weight: bold;
+}

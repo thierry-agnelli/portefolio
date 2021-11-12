@@ -21,7 +21,6 @@ const AccountValidation = () => {
                 "Content-type": "application/json"
             },
             body: JSON.stringify({ validationToken: params.validationToken })
-            // body: JSON.stringify({ validationToken: query.get("token") })
         })
             // Si un compte a validé a été trouvé
             .then(response => {
@@ -46,11 +45,11 @@ const AccountValidation = () => {
             <div id="validationContainer">
                 {validated ?
                     <>
-                        <h2>Validation de compte</h2>
+                        <h3 className="pageTitle">VALIDATION DE COMPTE</h3>
                         <p>Votre compte a bien été validé.</p>
                     </>
                     : null}
-                    <Link to="/" className="link">Retour à l'acceuil</Link>
+                    <Link to="/accueil" className="link">Retour à l'accueil</Link>
             </div>
             {redirect ? <Redirect to="/"/> : null}
         </>

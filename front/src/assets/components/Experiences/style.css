@@ -1,8 +1,13 @@
-.expSociety{
-    font-weight: bold;
-    font-style: italic;
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.expSociety {
+  font-weight: bold;
+  font-style: italic;
 }
 
-.jobDesc{
-    margin-left : 3.5em;
+.jobDesc {
+  margin-left: 3.5em;
 }
+/*# sourceMappingURL=style.css.map */

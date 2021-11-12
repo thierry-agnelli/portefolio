@@ -1,0 +1,79 @@
+// Règles
+@import "../../styleRules/styleRules.scss";
+
+/*Styles composant Bannière*/
+#banner{
+    display: flex;
+    #bannerLeftPart{
+        flex: 1;
+        display: flex;
+        padding : 0.5em;
+        #presentationPhoto{
+            display: flex;
+            align-items: center;
+            a{
+                img{
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 100%;
+                }
+            }
+        }
+        #presentationTitle{
+            padding: 0.5em;
+            padding-top: 0em;
+            h1{
+                margin: 0;
+                padding: 0;
+                font-size: 2.25em;
+                letter-spacing: 0.05em;
+            }
+            h2{
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+            }
+            div{
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+            }
+        }
+    }
+    #bannerRightPart{
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        #navMenu{
+            text-align: center;
+            ul{
+                margin: 0;
+                display: flex;
+                li{
+                    margin: 0.4em;
+                    list-style: none;
+                    font-family: $titleFont;
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width: 720px){
+    #bannerRightPart{
+        flex-direction: column-reverse;
+        #logMenu{
+            align-self: flex-end;
+        }
+        #navMenu{
+            ul{
+                flex-flow: row wrap;
+                font-size: 0.8em;
+            }
+        }
+    }
+}

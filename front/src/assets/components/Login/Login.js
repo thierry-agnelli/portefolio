@@ -103,9 +103,7 @@ const Login = () => {
 
     return (
         <div id="loginContainer">
-            <div className="pageTitle">
-                <h3>Connectez-vous</h3>
-            </div>
+            <h3 className="pageTitle">CONNECTEZ-VOUS</h3>
             <form>
                 <div className="formContainer">
                     <div id="loginTopRowContainer" className="labelRow">

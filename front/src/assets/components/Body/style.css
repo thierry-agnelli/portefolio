@@ -1,4 +1,10 @@
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 /*Styles composant Body*/
-#contentContainer{
-    flex-basis: 75vh;
+#contentContainer {
+  -ms-flex-preferred-size: 75vh;
+      flex-basis: 75vh;
 }
+/*# sourceMappingURL=style.css.map */

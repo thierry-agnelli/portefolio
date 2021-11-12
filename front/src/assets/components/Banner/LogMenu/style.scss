@@ -1,0 +1,29 @@
+// Règles
+@import "../../../styleRules/styleRules.scss";
+
+#LogContainer{
+    display: flex;
+    padding: 0.5em;
+    #userIcon{
+        padding: 0.5em;
+        height: 1.5em;
+        width: 1.5em;
+        border-radius: 100%;
+        background-color: $mainColor;
+    }
+    #logTextContainer{
+        padding: 0.5em;
+        height: 1.5em;
+        width: 6em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        #currentUserContainer{
+            font-size: 0.9em;
+            #unlog{
+                color: darkgrey;
+                text-align: center;
+            }
+        }
+    }
+}

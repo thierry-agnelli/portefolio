@@ -19,7 +19,7 @@ const Wip = () => {
         <div id="wipContainer">
             <div id="wipMessage">
                 <img src={wipLogo} alt="Work in progress"/>
-                <h2>WORK IN PROGRESS</h2>
+                <h3 className="pageTitle">WORK IN PROGRESS</h3>
             </div>
             <div onClick={backPage} className="link">Retour à la page précédente</div>
             <Link to="/accueil" className="link">Retour à l'accueil</Link>

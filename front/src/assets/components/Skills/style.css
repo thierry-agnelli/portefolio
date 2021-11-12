@@ -1,13 +1,17 @@
-
-#skillContainer{
-    margin-left: 5em;
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#skillContainer {
+  margin-left: 5em;
 }
 
-.skillList{
-    list-style: none;
-    padding :0;
+.skillList {
+  list-style: none;
+  padding: 0;
 }
 
-.skillElement{
-    margin: 0;
+.skillElement {
+  margin: 0;
 }
+/*# sourceMappingURL=style.css.map */

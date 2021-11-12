@@ -1,19 +1,36 @@
-#contactContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#contactContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#contactForm{
-    display: flex;
-    flex-direction: column;
+#contactContainer #contactForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-#contactInput_message{
-    width: 100%;
-    height: 15em;
-    margin-bottom: 1em;
-    padding: 0.3em;
-    resize: none;
-    border-radius: 0.5em;
+#contactContainer #contactForm #contactInput_message {
+  width: 100%;
+  height: 15em;
+  margin-bottom: 1em;
+  padding: 0.3em;
+  resize: none;
+  border-radius: 0.5em;
 }
+/*# sourceMappingURL=style.css.map */
