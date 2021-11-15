@@ -13,6 +13,7 @@ import AccountValidation from "../AccountValidation/AccountValidation";
 import ForgottenPwd from "../ForgottentPwd/ForgottentPwd";
 import ResetPassword from "../ResetPassword/ResetPassword";
 import Wip from "../Wip/Wip.js"
+import Test from "../Test/Test.js"
 // Styles
 import "./style.css"
 
@@ -57,6 +58,9 @@ const Body = () => {
         </Route>
         <Route path="/reset-password/:token">
           <ResetPassword />
+        </Route>
+        <Route path="/test">
+          <Test />
         </Route>
       </Switch>
     </div>

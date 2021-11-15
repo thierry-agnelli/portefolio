@@ -1,0 +1,95 @@
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#testContainer {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#testContainer #container3d {
+  height: 200px;
+  width: 200px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+#testContainer #container3d #cube {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+#testContainer #container3d #cube .face {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#testContainer #container3d #cube .f1 {
+  background-color: #FF000080;
+  -webkit-transform: translateZ(57.7px);
+          transform: translateZ(57.7px);
+}
+
+#testContainer #container3d #cube .f2 {
+  background-color: #FFFF0080;
+  -webkit-transform: rotateY(-120deg) translateZ(57.7px);
+          transform: rotateY(-120deg) translateZ(57.7px);
+}
+
+#testContainer #container3d #cube .f3 {
+  background-color: #0000FF80;
+  -webkit-transform: rotateY(120deg) translateZ(57.7px);
+          transform: rotateY(120deg) translateZ(57.7px);
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  from {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+            transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  from {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+            transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */

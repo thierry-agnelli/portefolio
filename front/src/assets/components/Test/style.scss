@@ -1,0 +1,70 @@
+// Règles
+@import "../../styleRules/styleRules.scss";
+
+#testContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    #container3d{
+        height: 200px;
+        width: 200px;
+        perspective: 1000px;
+        #cube{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            // animation: spin 15s infinite linear;
+            .face{
+                position: absolute;
+                height: 200px;
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            // Front
+            .f1{
+                background-color: #FF000080;
+                transform: translateZ(57.7px);
+            }
+            // Right
+            .f2{
+                background-color: #FFFF0080;
+                transform: rotateY(-120deg) translateZ(57.7px);
+            }
+            // Top
+            .f3{
+                background-color: #0000FF80;
+                transform: rotateY(120deg)  translateZ(57.7px);
+            }
+            // // Bottom
+            // .f4{
+            //     background-color: #00FF0080;
+            //     transform: rotatex(-90deg)  translateZ(100px);
+            // }
+            // // Left
+            // .f5{
+            //     background-color: #FF00FF80;
+            //     transform: rotateY(-90deg) translateZ(100px);
+            // }
+            // // Back
+            // .f6{
+            //     background-color: #00FFFF80;
+            //     transform: rotateY(180deg) translateZ(100px);
+            // }
+        }
+    }
+}
+
+@keyframes spin{
+    from{
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    from{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
