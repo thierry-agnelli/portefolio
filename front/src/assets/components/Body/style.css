@@ -4,7 +4,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 /*Styles composant Body*/
 #contentContainer {
-  -ms-flex-preferred-size: 75vh;
-      flex-basis: 75vh;
+  -ms-flex-preferred-size: 80vh;
+      flex-basis: 80vh;
+  margin-top: 3em;
 }
 /*# sourceMappingURL=style.css.map */

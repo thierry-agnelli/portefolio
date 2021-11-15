@@ -4,75 +4,107 @@
 /*Styles composant Bannière*/
 #banner{
     display: flex;
-    #bannerLeftPart{
+    flex-direction: column;
+    height: 10vh;
+    #bannerTop{
         flex: 1;
         display: flex;
-        padding : 0.5em;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: $mainColor;
         #presentationPhoto{
-            display: flex;
-            align-items: center;
             a{
+                position: absolute;
+                top: -0.6em;
+                left: -1.95em;
                 img{
                     height: 100px;
                     width: 100px;
-                    border-radius: 100%;
+                    border: 5px solid $mainColor;
+                    border-radius: 0 100% 100% 100%;
                 }
             }
         }
-        #presentationTitle{
-            padding: 0.5em;
-            padding-top: 0em;
-            h1{
-                margin: 0;
-                padding: 0;
-                font-size: 2.25em;
-                letter-spacing: 0.05em;
-            }
-            h2{
-                margin: 0;
-                padding: 0;
-                font-size: 1em;
-            }
-            div{
-                margin: 0;
-                padding: 0;
-                font-size: 1em;
+        h1{
+            flex: 2;
+            margin: 0 0 0.25em 75px;
+            padding: 0;
+            font-size: 2.1em;
+            letter-spacing: 0.05em;
+        }
+        #bannerTopRight{
+            flex: 8;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            #navMenu{
+                flex: 9;
+                ul{
+                    margin: 0 1em;
+                    display: flex;
+                    justify-content: flex-end;
+                    li{
+                        margin: 0.4em;
+                        list-style: none;
+                        font-family: $titleFont;
+                        font-size: 1.2em;
+                        .navLink{
+                            cursor: pointer;
+                            text-decoration: none;
+                            color: black;
+                            transition: color 0.25s;
+                        }
+                        
+                        .navLink:hover{
+                            text-decoration: underline;
+                            color: $grey;
+                            transition: color 0.25s;
+                        }
+                    }
+                }
+                #logMenu{
+                    flex: 1;
+                }
             }
         }
     }
-    #bannerRightPart{
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        #navMenu{
-            text-align: center;
-            ul{
-                margin: 0;
-                display: flex;
-                li{
-                    margin: 0.4em;
-                    list-style: none;
-                    font-family: $titleFont;
-                    font-size: 1.2em;
-                }
-            }
+    #bannerBottom{
+        margin: 0 0 0 90px;
+        h2{
+            margin: 0;
+            padding: 0;
+            font-size: 1.3em;
+        }
+        div{
+            // margin: 0 0 0 90px;
+            margin: 0;
+            padding: 0;
+            font-size: 1em;
         }
     }
 }
 
 
-
-
 @media (max-width: 720px){
-    #bannerRightPart{
-        flex-direction: column-reverse;
-        #logMenu{
-            align-self: flex-end;
-        }
-        #navMenu{
-            ul{
-                flex-flow: row wrap;
-                font-size: 0.8em;
+    #banner{
+        margin-bottom: 0.75em;
+        #bannerTop{
+            h1{
+                font-size: 1.5em;
+                letter-spacing: 0em;
+            }
+            #bannerTopRight{
+                flex-direction: column-reverse;
+                #logMenu{
+                    align-self: flex-end;
+                }
+                #navMenu{
+                    ul{
+                        margin-left: 0;
+                        flex-flow: row wrap;
+                        font-size: 0.8em;
+                    }
+                }
             }
         }
     }

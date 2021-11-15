@@ -3,13 +3,13 @@
 
 #LogContainer{
     display: flex;
-    padding: 0.5em;
+    padding: 0em;
     #userIcon{
         padding: 0.5em;
         height: 1.5em;
         width: 1.5em;
         border-radius: 100%;
-        background-color: $mainColor;
+        background-color: $grey;
     }
     #logTextContainer{
         padding: 0.5em;

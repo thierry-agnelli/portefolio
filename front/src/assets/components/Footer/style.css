@@ -3,8 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 #footer {
-  -ms-flex-preferred-size: 10vh;
-      flex-basis: 10vh;
+  -ms-flex-preferred-size: 5vh;
+      flex-basis: 5vh;
   border-top: 1px solid darkgrey;
   padding: 1em;
   color: darkgrey;

@@ -7,6 +7,10 @@ import "./style.css"
 // Icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
+import { faFileCode } from "@fortawesome/free-regular-svg-icons";
 
 // Composant Acceuil
 const Home = () => {
@@ -29,7 +33,7 @@ const Home = () => {
 
                 // Récupération et mise en formes des données compétences
                 const skillsList = {}
-                
+
                 for (const element of json.skills) {
                     // Si la catégorie de l'élément n'est pas encore enregistré
                     if (!skillsList[element.order]) {
@@ -40,7 +44,7 @@ const Home = () => {
                         }
                     }
                     else
-                        skillsList[element.order].list.push({ _id: element._id, name: element.name, info: element.info  });
+                        skillsList[element.order].list.push({ _id: element._id, name: element.name, info: element.info });
                 };
 
                 // Mise des infos sous forme de tableau
@@ -105,27 +109,42 @@ const Home = () => {
         <div id="homeContainer">
             <div ref={refInfoToolTip} id="infoToolTip"></div>
             <div className="infoContainer">
-                <h3>Formations</h3>
+                <div className="infoTitle">
+                    <div>
+                        <FontAwesomeIcon icon={faGraduationCap} className="qualifIcon" size="1x" />
+                    </div>
+                    <h3>Formations</h3>
+                </div>
                 <ul className="infoItemList">
                     {qualifications.map(item =>
-                        <li key={`qualif_${item._id}`} id={`qualif_${item._id}`} className="infoContent" onMouseOver={infoToolTipShow} onMouseLeave={infoToolTipHide}>{item.title}{item.year ? <FontAwesomeIcon icon={faQuestionCircle} id="infoIcon"/>: null}</li>
+                        <li key={`qualif_${item._id}`} id={`qualif_${item._id}`} className="infoContent" onMouseOver={infoToolTipShow} onMouseLeave={infoToolTipHide}>{item.title}{item.year ? <FontAwesomeIcon icon={faQuestionCircle} id="infoIcon" /> : null}</li>
                     )}
                 </ul>
             </div>
             <div className="infoContainer">
-                <h3>Compétences</h3>
+                <div className="infoTitle">
+                    <div>
+                        <FontAwesomeIcon icon={faFileCode} className="skillIcon" />
+                    </div>
+                    <h3>Compétences</h3>
+                </div>
                 {skills.map((item, index) =>
                     <div key={`${index}_${item.category}`} className="infoContent">
                         <h4>{item.category}</h4>
                         <ul className="infoItemList">
                             {item.list.map(element =>
-                                <li key={`skill_${element._id}`} id={`skill_${element._id}_${item.category}`} className="itemElement" onMouseOver={infoToolTipShow} onMouseLeave={infoToolTipHide}>{element.name}{element.info ? <FontAwesomeIcon icon={faQuestionCircle} id="infoIcon"/>: null}</li>
+                                <li key={`skill_${element._id}`} id={`skill_${element._id}_${item.category}`} className="itemElement" onMouseOver={infoToolTipShow} onMouseLeave={infoToolTipHide}>{element.name}{element.info ? <FontAwesomeIcon icon={faQuestionCircle} id="infoIcon" /> : null}</li>
                             )}
                         </ul>
                     </div>)}
             </div>
             <div className="infoContainer">
-                <h3>Présentation</h3>
+                <div className="infoTitle">
+                    <div>
+                        <FontAwesomeIcon icon={faFileAlt} className="infoIcon" />
+                    </div>
+                    <h3>Présentation</h3>
+                </div>
                 <div id="presentationText">
                     <div>Initialement diplômé d'un BTS électronique, où j'y ai découvert mes premières expériences de code (programation de microcontrôleur en C), j'ai par la suite exploré en auto-didacte différents langages (C/C++, C#, VBA, ruby, lua...).</div>
                     <div>D'abord à titre de loisir en C# sur Unity 3D et le développement de quelques add-ons pour jeux vidéos en lua, j'ai pu ensuite utiliser ces compétences dans le cadre professionel avec du VBA pour la création de macro sur Excel et de base de données Access, et en C# pour des logiciels standalone.</div>

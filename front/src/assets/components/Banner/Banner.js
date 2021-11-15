@@ -11,7 +11,34 @@ import myPic from "../../medias/images/pi_ta.jpg";
 const Banner = () => {
     return (
         <header id="banner">
-            <div id="bannerLeftPart">
+            <div id="bannerTop">
+                <div>
+                    <div id="presentationPhoto">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                            <img alt="thierry_agnelli" src={myPic} />
+                        </a>
+                    </div>
+                    <h1>Thierry Agnelli</h1>
+                </div>
+                <div id="bannerTopRight">
+                    <nav id="navMenu">
+                        <ul>
+                            <li><Link to="/accueil" className="navLink">Accueil</Link></li>
+                            <li><Link to="/experiences" className="navLink">Expériences</Link></li>
+                            <li><Link to="/realisations" className="navLink">Réalisations</Link></li>
+                            <li><Link to="/contact" className="navLink">Me contacter</Link></li>
+                        </ul>
+                    </nav>
+                    <div id="logMenu">
+                        <LogMenu />
+                    </div>
+                </div>
+            </div>
+            <div id="bannerBottom">
+                <h2>Développeur Fullstack</h2>
+                <div>Disponible</div>
+            </div>
+            {/* <div id="bannerLeftPart">
                 <div id="presentationPhoto">
                     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
                         <img alt="thierry_agnelli" src={myPic} />
@@ -35,7 +62,7 @@ const Banner = () => {
                 <div id="logMenu">
                     <LogMenu />
                 </div>
-            </div>
+            </div> */}
         </header>
     );
 };
