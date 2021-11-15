@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 #homeContainer {
-  margin: 2em;
+  margin: 7em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
