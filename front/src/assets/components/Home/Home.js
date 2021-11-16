@@ -12,12 +12,17 @@ import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFileCode } from "@fortawesome/free-regular-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+// Constantes
+const largeScreenZScale = 600;
+const smallScreenZScale = 97;
 
 // Composant Acceuil
 const Home = () => {
     /* Variables d'états */
     const [qualifications, setQualifications] = useState([]);
     const [skills, setSkills] = useState([]);
+    const [zScale, setZScale] = useState(window.innerWidth >= 760 ? largeScreenZScale : smallScreenZScale);
+    // const [zScale, setZScale] = useState(largeScreenZScale);
     const [actRotation, setActRotation] = useState(0);
     /* Références */
     const infoToolTipRef = useRef(null);
@@ -114,10 +119,22 @@ const Home = () => {
         else
             rotation = -120;
 
-        infoCarrousselRef.current.style.transform = `rotateY(${actRotation + rotation}deg) translateZ(-400px)`;
+        infoCarrousselRef.current.style.transform = `rotateY(${actRotation + rotation}deg) translateZ(-${zScale}px)`;
 
         setActRotation(actRotation + rotation);
     };
+
+    // Redimensionnement fenetre
+    const resizeWidows = (e) => {
+        console.log(zScale);
+        if( window.innerWidth <= 760 && zScale !== smallScreenZScale)
+            setZScale(smallScreenZScale);
+        else if( window.innerWidth > 760 && zScale !== largeScreenZScale)
+            setZScale(largeScreenZScale);
+    }
+
+
+    window.addEventListener("resize", resizeWidows);
 
     return (
         <section id="homeContainer">
@@ -126,7 +143,7 @@ const Home = () => {
                 <FontAwesomeIcon id="infoCommand-Right" className="infoCommand" icon={faChevronRight} size="1x"  onClick={infosContainerRotation}/>
             </div>
             <div id="infoMainContainer">
-                <div id="infoCarroussel" className="carrousselZScale" ref={infoCarrousselRef} style={{transform: `rotateY(${actRotation}deg) translateZ(-400px)`}}>
+                <div id="infoCarroussel" className="carrousselZScale" ref={infoCarrousselRef} style={{transform: `rotateY(${actRotation}deg) translateZ(-${zScale}px)`}}>
                     <div id="qualifInfo" className="infoContainer">
                         <div className="infotitle">
                             <div className="infoIcontainer">
@@ -179,63 +196,6 @@ const Home = () => {
                 </div>
             </div>
             <div ref={infoToolTipRef} id="infoToolTip" />
-            {/* <div id="infoRotationCommandsContainer">
-                <button id="infoCommand-Left" className="infoRotationCommands" onClick={infosContainerRotation}>{"<"}</button>
-                <button id="infoCommand-Right" className="infoRotationCommands" onClick={infosContainerRotation}>{">"}</button>
-            </div>
-            <div id="infoMainContainer">
-                <div ref={infoToolTipRef} id="infoToolTip" />
-                <div id="infoContainerWrapper" ref={infoContainerWrapperRef}>
-                    <div className="infoContainer qualifInfoContainer">
-                        <div className="infoTitle">
-                            <div>
-                                <FontAwesomeIcon icon={faGraduationCap} className="qualifIcon" size="1x" />
-                            </div>
-                            <h3>Formations</h3>
-                        </div>
-                        <ul className="infoItemList">
-                            {qualifications.map(item =>
-                                <li key={`qualif_${item._id}`} id={`qualif_${item._id}`} className="infoItem" onMouseOver={infoToolTipShow} onMouseLeave={infoToolTipHide}>{item.title}{item.year ? <FontAwesomeIcon icon={faQuestionCircle} id="infoIcon" /> : null}</li>
-                            )}
-                        </ul>
-                    </div>
-                    <div className="infoContainer skillInfoContainer">
-                        <div className="infoTitle">
-                            <div>
-                                <FontAwesomeIcon icon={faFileCode} className="skillIcon" />
-                            </div>
-                            <h3>Compétences</h3>
-                        </div>
-                        <div className="infoContent">
-                            {skills.map((item, index) =>
-                                <div key={`${index}_${item.category}`} className="infoItem">
-                                    <h4>{item.category}</h4>
-                                    <ul className="infoItemList">
-                                        {item.list.map(element =>
-                                            <li key={`skill_${element._id}`} id={`skill_${element._id}_${item.category}`} className="itemElement" onMouseOver={infoToolTipShow} onMouseLeave={infoToolTipHide}>{element.name}{element.info ? <FontAwesomeIcon icon={faQuestionCircle} id="infoIcon" /> : null}</li>
-                                        )}
-                                    </ul>
-                                </div>)}
-                        </div>
-                    </div>
-                    <div className="infoContainer presentationInfoContainer">
-                        <div className="infoTitle">
-                            <div>
-                                <FontAwesomeIcon icon={faFileAlt} className="infoIcon" />
-                            </div>
-                            <h3>Présentation</h3>
-                        </div>
-                        <div className="infoContent">
-                            <div id="presentationText">
-                                <div>Initialement diplômé d'un BTS électronique, où j'y ai découvert mes premières expériences de code (programation de microcontrôleur en C), j'ai par la suite exploré en auto-didacte différents langages (C/C++, C#, VBA, ruby, lua...).</div>
-                                <div>D'abord à titre de loisir en C# sur Unity 3D et le développement de quelques add-ons pour jeux vidéos en lua, j'ai pu ensuite utiliser ces compétences dans le cadre professionel avec du VBA pour la création de macro sur Excel et de base de données Access, et en C# pour des logiciels standalone.</div>
-                                <div>Pour concrétiser ma volonté de reconversion j'ai suivi une formation au Bocal Academy de Nice dans le domaine du développement web et mobile de développeur Fullstack.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div> */}
         </section>
     );
 }

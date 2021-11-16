@@ -73,6 +73,7 @@
   -webkit-box-flex: 9;
       -ms-flex: 9;
           flex: 9;
+  width: 100%;
 }
 
 #banner #bannerTop #bannerTopRight #navMenu ul {
@@ -129,13 +130,33 @@
   font-size: 1em;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 910px) {
+  #banner #bannerTop h1 {
+    font-size: 1.45em;
+  }
+  #banner ul {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 760px) {
+  #banner #bannerTop h1 {
+    margin: 0 0 0 90px;
+    font-size: 1.15em;
+  }
+  #banner ul {
+    font-size: 0.65em;
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 630px) {
   #banner {
-    margin-bottom: 0.75em;
-    height: 13vh;
+    height: 11.5vh;
+    margin-bottom: 1em;
   }
   #banner #bannerTop h1 {
-    font-size: 1.5em;
+    font-size: 1.15em;
     letter-spacing: 0em;
   }
   #banner #bannerTop #bannerTopRight {
@@ -154,7 +175,7 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    font-size: 0.8em;
+    font-size: 0.65em;
   }
   #banner #bannerTop #bannerTopRight #navMenu ul li {
     margin-top: 0;
