@@ -5,6 +5,7 @@
 /* Principal */
 #mainContainer {
   height: 100vh;
+  min-height: 900px;
   padding-bottom: 1em;
   display: -webkit-box;
   display: -ms-flexbox;

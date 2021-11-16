@@ -19,7 +19,7 @@ const Test = () => {
     };
     const mouseEnter = (e) => {
         setMouseX(e.screenX);
-    }
+    };
 
     return (
         <section id="testContainer">

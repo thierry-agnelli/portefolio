@@ -88,6 +88,7 @@
 @media (max-width: 720px){
     #banner{
         margin-bottom: 0.75em;
+        height: 13vh;
         #bannerTop{
             h1{
                 font-size: 1.5em;
@@ -103,6 +104,10 @@
                         margin-left: 0;
                         flex-flow: row wrap;
                         font-size: 0.8em;
+                        li{
+                            margin-top: 0;
+                            margin-bottom: 0;
+                        }
                     }
                 }
             }

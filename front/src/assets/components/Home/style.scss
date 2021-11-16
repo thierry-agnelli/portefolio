@@ -1,75 +1,129 @@
 // Règles
 @import "../../styleRules/styleRules.scss";
 
+// Constantes
+$translation: 400px;
+$negTranslation: 0 - $translation;
+
 #homeContainer{
-    margin: 7em 0;
+    height: 100%;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    .infoContainer{
-        border: 3px ridge darkgrey;
-        width: 35vh;
-        min-width: 15em;;
-        padding-bottom: 0.5em;
-        box-shadow: 5px 5px 5px grey;
-        margin : 1em 0;
-        .infoTitle{
+    flex-direction: column;
+    align-items: center;
+    #infoRotationCommands{
+        .infoCommand{
+            margin: 0 1.45em;
+            padding: 0.25em;
+            height: 1.85em;
+            width: 1.85em;
+            border-style: none;
+            border-radius: 100%;
+            background-color: $mainColor;
+            color: $thirdColor;
+            cursor: pointer;
+        }
+    }
+    #infoMainContainer{
+        margin-top: 3em;
+        height: 55vh;
+        min-height: 600px;
+        width: 20vw;
+        min-width: 350px;
+        perspective: 1000px;
+        #infoCarroussel{
+            height: 100%;
+            width: 100%;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            div{
-                background-color: $mainColor;
-                border: 3px ridge darkgrey;
-                border-radius: 100%;
-                height: 3.5em;
-                width: 3.5em;
-                text-align: center;
-                position: absolute;
-                top: -1.2em;
-                left: -1.2em;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                .qualifIcon{
-                    height: 2.75em;
-                    width: 2.75em;
+            transform-style: preserve-3d;
+            transform-origin: center center -400px;
+            // transform: translateZ(-$translation);
+            transition: transform 1s;
+            .infoContainer{
+                height: 100%;
+                width: 100%;
+                border: 3px ridge $secondColor;
+                position: absolute;    
+                .infotitle{
+                    height: 10%;
+                    background-color: $mainColor;
+                    text-align: center;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;;
+                    h3{
+                        margin: 0;
+                        margin-bottom: 0.5vh;
+                        font-family: $titleFont;
+                        font-size: 2em;
+                    }
+                    .infoIcontainer{
+                        height: 3.5em;
+                        width: 3.5em;
+                        position: absolute;
+                        top: -1.2em;
+                        left: -1.2em;
+                        border: 3px ridge $secondColor;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $thirdColor;
+                        background-color: $mainColor;
+                        #qualifIcon{
+                            height: 2.75em;
+                            width: 2.75em;
+                        }
+                        #skillIcon{
+                            height: 2.25em;
+                            width: 2.25em;
+                        }
+                        #presentationIcon{
+                            height: 2.25em;
+                            width: 2.25em;
+                        }
+                    }
                 }
-                .skillIcon{
-                    height: 2.25em;
-                    width: 2.25em;
+                .infoContent{
+                    height: 89.4%;
+                    padding: 1% 0 0 0.5em;
+                    background-color: white;
+                    h4{
+                        margin: 0;
+                    }
+                    .infoItemList{
+                        margin: 0.1em 0 0.3em 0;
+                        .itemElement{
+                            list-style: none;
+                            margin-top: 0.35em;;
+                            .infoToolTipIcon{
+                                margin: 0 0.3em;
+                                color: $secondColor;
+                            }
+                        }
+                    }
+                    #presentationText{
+                        padding: 0.4em;
+                        font-size: 1.15em;
+                        .presentationParagraph{
+                            margin-bottom: 0.3em;
+                        }
+                    }
                 }
-                .infoIcon{
-                    height: 2.25em;
-                    width: 2.25em; 
-                }
             }
-            h3{
-                flex: 1;
-                text-align: center;
-                margin: 0;
-                padding: 0.3em 0;   
-                background-color: $mainColor;
-                font-family: $titleFont;
-                font-size: 1.5em;
+            #qualifInfo{
+                transform: rotateY(-120deg) translateZ($translation);
             }
-        }
-        .infoContent{
-            padding: 0.5em 0.5em 0 0.5em;
-            h4{
-                margin: 0;
+            #skillInfo{
+                transform: translateZ($translation);
             }
-        }
-        .infoItemList{
-            margin: 0;
-            padding: 0.25em 0.5em 0 1em;
-            list-style: none;
-            #infoIcon{
-                margin : 0 0.2em;
-                color : darkgrey;
+            #presentationInfo{
+                transform: rotateY(120deg) translateZ($translation);
             }
-        }
-        #presentationText{
-            padding: 0.4em;
         }
     }
     #infoToolTip{
@@ -78,10 +132,139 @@
         background-color: white;
         padding: 0.5em;
         visibility: hidden;
-    }
-    
-    #infoToolTipTitle{
-        font-weight: bold;
+        #infoToolTipTitle{
+            font-family: $titleFont;
+            font-weight: bold;
+        }
     }
 }
+
+// #homeContainer{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     #infoRotationCommandsContainer{
+//         display: flex;
+//         align-items: center;
+//         .infoRotationCommands{
+//             margin: 0 0.5em;
+//             border : none;
+//             border-radius: 100%;
+//             font-weight: bold;
+//             font-size: 2em;
+//             color:white;
+//             background-color: $mainColor;
+//             width: 1em;
+//             height: 1em;
+//             cursor: pointer;
+//         }
+//     }
+//     #infoMainContainer{
+//         // margin: 3em 0;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//         perspective: 1000px;
+//         #infoContainerWrapper{
+//             position: relative;
+//             transform-style: preserve-3d;
+//             transform-origin: 0 0 $negTranslation;
+//             transform: translateZ(-$translation);
+//             transition: transform 1s;
+//             .infoContainer{
+//                 border: 3px ridge darkgrey;
+//                 width: 20em;
+//                 box-shadow: 5px 5px 5px grey;
+//                 height: 500px;
+//                 margin : 6em 0 0 0;
+//                 position: absolute;
+//                 left: -10em;
+//                 .infoTitle{
+//                     display: flex;
+//                     position: relative;
+//                     div{
+//                         background-color: $mainColor;
+//                         border: 3px ridge darkgrey;
+//                         border-radius: 100%;
+//                         height: 3.5em;
+//                         width: 3.5em;
+//                         text-align: center;
+//                         position: absolute;
+//                         top: -1.2em;
+//                         left: -1.2em;
+//                         display: flex;
+//                         align-items: center;
+//                         justify-content: center;
+//                         color: white;
+//                         .qualifIcon{
+//                             height: 2.75em;
+//                             width: 2.75em;
+//                         }
+//                         .skillIcon{
+//                             height: 2.25em;
+//                             width: 2.25em;
+//                         }
+//                         .infoIcon{
+//                             height: 2.25em;
+//                             width: 2.25em; 
+//                         }
+//                     }
+//                     h3{
+//                         flex: 1;
+//                         text-align: center;
+//                         margin: 0;
+//                         padding: 0.3em 0;   
+//                         background-color: $mainColor;
+//                         font-family: $titleFont;
+//                         font-size: 1.5em;
+//                     }
+//                 }
+//                 .infoContent{
+//                     height: auto;
+//                     background-color: red;
+//                 }
+//                 .infoItem{
+//                     padding: 0.5em 0.5em 0 0.5em;
+//                     h4{
+//                         margin: 0;
+//                     }
+//                 }
+//                 .infoItemList{
+//                     margin: 0;
+//                     padding: 0.25em 0.5em 0 1em;
+//                     list-style: none;
+//                     #infoIcon{
+//                         margin : 0 0.2em;
+//                         color : darkgrey;
+//                     }
+//                 }
+//                 #presentationText{
+//                     padding: 0.4em;
+//                 }
+//             }
+//             .qualifInfoContainer{
+//                 transform: rotateY(120deg) translateZ($translation);
+//             }
+//             .skillInfoContainer{
+//                 transform: translateZ($translation);
+//             }
+//             .presentationInfoContainer{
+//                 transform: rotateY(-120deg) translateZ($translation);
+//             }
+//         } 
+//         #infoToolTip{
+//             position: absolute;
+//             border: 3px ridge darkgrey;
+//             background-color: white;
+//             padding: 0.5em;
+//             visibility: hidden;
+//         }
+        
+//         #infoToolTipTitle{
+//             font-weight: bold;
+//         }
+//     }    
+// }
 

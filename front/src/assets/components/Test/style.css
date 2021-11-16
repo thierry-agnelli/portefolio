@@ -51,6 +51,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transform: translateZ(-57.7px);
+          transform: translateZ(-57.7px);
 }
 
 #testContainer #container3d #cube .f1 {
