@@ -13,6 +13,7 @@ const Test = () => {
 
     // Handle
     const moveCube = (e) => {
+        // setActRotation(actRotation - (mouseX - e.screenX));
         setActRotation(actRotation - (mouseX - e.screenX));
         setMouseX(e.screenX);
         cubeRef.current.style.transform = `rotateY(${actRotation}deg)`;

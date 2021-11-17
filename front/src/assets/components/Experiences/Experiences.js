@@ -23,7 +23,6 @@ const Experiences = () => {
             .catch(err => err.text().then(message => console.log(message)));
     }, []);
 
-    console.log(experiences);
     return (
         <section>
             <h3 className="pageTitle">EXPERIENCES PROFESSIONELLES</h3>
@@ -33,7 +32,7 @@ const Experiences = () => {
                     <div className="expSociety">{item.society}</div>
                     <div>{item.job}</div>
                     <ul className="jobDesc">
-                        {item.responsability.map((element, index) => <li key="index">{element}</li>)}
+                        {item.responsability.map((element, index) => <li key={index}>{element}</li>)}
                     </ul>
                 </div>)}
         </section>

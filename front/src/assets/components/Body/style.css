@@ -4,14 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 /*Styles composant Body*/
 #contentContainer {
-  height: 80vh;
   min-height: 720px;
   padding-top: 2em;
-}
-
-@media (max-width: 720px) {
-  #contentContainer {
-    height: 77vh;
-  }
 }
 /*# sourceMappingURL=style.css.map */

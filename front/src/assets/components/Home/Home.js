@@ -12,23 +12,25 @@ import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFileCode } from "@fortawesome/free-regular-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-// Constantes
-const largeScreenZScale = 600;
-const smallScreenZScale = 97;
+
 
 // Composant Acceuil
 const Home = () => {
+    // Constantes
+    const largeScreenZScale = 600;
+    const smallScreenZScale = 95.3;
     /* Variables d'états */
     const [qualifications, setQualifications] = useState([]);
     const [skills, setSkills] = useState([]);
     const [zScale, setZScale] = useState(window.innerWidth >= 760 ? largeScreenZScale : smallScreenZScale);
-    // const [zScale, setZScale] = useState(largeScreenZScale);
+    const [touchPosX, setTouchPosX] = useState(0);
     const [actRotation, setActRotation] = useState(0);
     /* Références */
     const infoToolTipRef = useRef(null);
     const infoCarrousselRef = useRef(null);
 
-    /* Récupération infos formations et compétences */
+    /* Hook */
+    // Récupération infos formations et compétences
     useEffect(() => {
         fetch(`${config.API_URL}/info/get-all`)
             .then(response => response.json())
@@ -60,6 +62,11 @@ const Home = () => {
                 setSkills(skillsTab)
             });
     }, []);
+
+    // Maj Rotation Carrousssel
+    useEffect(() => {
+        infoCarrousselRef.current.style.transform = `rotateY(${actRotation}deg) translateZ(-${zScale}px)`;
+    }, [actRotation])
 
     /* Handler */
     // Affichage Tool Tip
@@ -110,27 +117,29 @@ const Home = () => {
         infoToolTipRef.current.innerHTML = null;
     };
 
-    // Rotation infos
+    // Rotation infos Boutons
     const infosContainerRotation = (e) => {
-        console.log(e.target.classList[0]);
-        let rotation;
+        let rotation = Math.floor(actRotation/120);
         if (e.target.id.split('-')[1] === "Right")
-            rotation = 120;
+            rotation++;
         else
-            rotation = -120;
+            rotation--;
 
-        infoCarrousselRef.current.style.transform = `rotateY(${actRotation + rotation}deg) translateZ(-${zScale}px)`;
+        setActRotation(rotation * 120);
+    };
 
-        setActRotation(actRotation + rotation);
+    // Rotation infos Manuelle
+    const moveCarroussel = (e) => {
+        setActRotation(actRotation - (touchPosX - e.changedTouches[0].clientX));
+        setTouchPosX(e.changedTouches[0].clientX);
+    }
+    const touchOrigin = (e) => {
+        setTouchPosX(e.changedTouches[0].clientX)
     };
 
     // Redimensionnement fenetre
     const resizeWidows = (e) => {
-        console.log(zScale);
-        if( window.innerWidth <= 760 && zScale !== smallScreenZScale)
-            setZScale(smallScreenZScale);
-        else if( window.innerWidth > 760 && zScale !== largeScreenZScale)
-            setZScale(largeScreenZScale);
+        setZScale(window.innerWidth >= 760 ? largeScreenZScale : smallScreenZScale);
     }
 
 
@@ -139,11 +148,16 @@ const Home = () => {
     return (
         <section id="homeContainer">
             <div id="infoRotationCommands">
-                <FontAwesomeIcon id="infoCommand-Left" className="infoCommand" icon={faChevronLeft} size="1x"  onClick={infosContainerRotation}/>
-                <FontAwesomeIcon id="infoCommand-Right" className="infoCommand" icon={faChevronRight} size="1x"  onClick={infosContainerRotation}/>
+                {/* <FontAwesomeIcon id="infoCommand-Left" className="infoCommand" icon={faChevronLeft} size="1x" onClick={infosContainerRotation}/> */}
+                {/* <FontAwesomeIcon id="infoCommand-Right" className="infoCommand" icon={faChevronRight} size="1x"  onClick={infosContainerRotation}/> */}
+                <button id="infoCommand-left" className="infoCommand" onClick={infosContainerRotation}>{"<"}</button>
+                <button id="infoCommand-Right" className="infoCommand" onClick={infosContainerRotation}>{">"}</button>
             </div>
             <div id="infoMainContainer">
-                <div id="infoCarroussel" className="carrousselZScale" ref={infoCarrousselRef} style={{transform: `rotateY(${actRotation}deg) translateZ(-${zScale}px)`}}>
+                <div id="infoCarroussel" ref={infoCarrousselRef} 
+                 onTouchStart={touchOrigin}
+                 onTouchMove={moveCarroussel}
+                 style={{transform: `rotateY(${actRotation}deg) translateZ(-${zScale}px)`}}>
                     <div id="qualifInfo" className="infoContainer">
                         <div className="infotitle">
                             <div className="infoIcontainer">

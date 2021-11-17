@@ -3,11 +3,8 @@
 
 /* Principal */
 #mainContainer{
-    height: 100vh;
     min-height: 900px;
     padding-bottom: 1em;
-    display: flex;
-    flex-direction: column;
     font-family: $mainFont;
 }
 

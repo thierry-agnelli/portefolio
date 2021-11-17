@@ -3,7 +3,7 @@
 
 // Constantes
 $largeScreeenZScale: 600px;
-$smallScreeenZScale: 97px;
+$smallScreeenZScale: 95.3px;
 
 #homeContainer{
     height: 100%;
@@ -12,13 +12,13 @@ $smallScreeenZScale: 97px;
     align-items: center;
     #infoRotationCommands{
         .infoCommand{
-            margin: 0 1.45em;
-            padding: 0.25em;
-            height: 1.85em;
-            width: 1.85em;
+            margin: 0 0.5em;
+            height: 1.25em;
+            width: 1.25em;
             border-style: none;
             border-radius: 100%;
             background-color: $mainColor;
+            font-size: 2.5em;
             color: $thirdColor;
             cursor: pointer;
         }
