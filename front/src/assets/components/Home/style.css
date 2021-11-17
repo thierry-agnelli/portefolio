@@ -68,7 +68,7 @@
 #homeContainer #infoMainContainer #infoCarroussel .infoContainer {
   height: 100%;
   width: 100%;
-  border: 3px ridge darkGrey;
+  border: 3px ridge darkgrey;
   position: absolute;
 }
 
@@ -101,7 +101,7 @@
   position: absolute;
   top: -1.2em;
   left: -1.2em;
-  border: 3px ridge darkGrey;
+  border: 3px ridge darkgrey;
   border-radius: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -152,7 +152,7 @@
 
 #homeContainer #infoMainContainer #infoCarroussel .infoContainer .infoContent .infoItemList .itemElement .infoToolTipIcon {
   margin: 0 0.3em;
-  color: darkGrey;
+  color: darkgrey;
 }
 
 #homeContainer #infoMainContainer #infoCarroussel .infoContainer .infoContent #presentationText {

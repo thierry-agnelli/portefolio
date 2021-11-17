@@ -7,7 +7,7 @@
   width: 100%;
   border-top: 1px solid darkgrey;
   padding: 1em;
-  color: #666666;
+  color: #888888;
   font-size: 0.9em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,7 +40,7 @@
 
 #footer #footerLinkContainer a {
   text-decoration: none;
-  color: #666666;
+  color: #888888;
   font-size: 0.8em;
 }
 

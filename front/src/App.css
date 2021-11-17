@@ -82,6 +82,7 @@
 
 .formButton:hover {
   background-color: #B04541;
+  color: white;
 }
 
 .requiredField {
