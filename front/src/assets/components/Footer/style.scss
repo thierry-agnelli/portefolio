@@ -1,11 +1,14 @@
 // Règles
 @import "../../styleRules/styleRules.scss";
 
+$footerGrey: #666666;
+
 #footer{
-    height: 10vh;
+    height: 5em;
+    width: 100%;
     border-top: 1px solid darkgrey;
     padding:1em;
-    color: darkgrey;
+    color: $footerGrey;
     font-size: 0.9em;
     display: flex;
     flex-direction: column;
@@ -20,7 +23,7 @@
         flex : 3;
         a{
             text-decoration: none;
-            color: darkgrey;
+            color: $footerGrey;
             font-size: 0.8em;
             
         }

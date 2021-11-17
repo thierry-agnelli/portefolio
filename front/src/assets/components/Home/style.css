@@ -16,7 +16,7 @@
           align-items: center;
 }
 
-#homeContainer #infoRotationCommands .infoCommand {
+#homeContainer #carrousselRotationCommands .carrousselCommand {
   margin: 0 0.5em;
   height: 1.25em;
   width: 1.25em;
@@ -193,24 +193,40 @@
 }
 
 @media (max-width: 760px) {
+  #homeContainer {
+    margin-top: 0.5em;
+  }
+  #homeContainer #carrousselRotationCommands .carrousselCommand {
+    margin: 0 0.5em;
+    height: 1.15em;
+    width: 1.15em;
+    font-size: 1.75em;
+  }
   #homeContainer #infoMainContainer {
     margin-top: 1em;
+    min-height: 550px;
   }
   #homeContainer #infoMainContainer #infoCarroussel {
-    -webkit-transform-origin: center center -97px;
-            transform-origin: center center -97px;
+    -webkit-transform-origin: center center -95.3px;
+            transform-origin: center center -95.3px;
   }
   #homeContainer #infoMainContainer #infoCarroussel #qualifInfo {
-    -webkit-transform: rotateY(-120deg) translateZ(97px);
-            transform: rotateY(-120deg) translateZ(97px);
+    -webkit-transform: rotateY(-120deg) translateZ(95.3px);
+            transform: rotateY(-120deg) translateZ(95.3px);
   }
   #homeContainer #infoMainContainer #infoCarroussel #skillInfo {
-    -webkit-transform: translateZ(97px);
-            transform: translateZ(97px);
+    -webkit-transform: translateZ(95.3px);
+            transform: translateZ(95.3px);
   }
   #homeContainer #infoMainContainer #infoCarroussel #presentationInfo {
-    -webkit-transform: rotateY(120deg) translateZ(97px);
-            transform: rotateY(120deg) translateZ(97px);
+    -webkit-transform: rotateY(120deg) translateZ(95.3px);
+            transform: rotateY(120deg) translateZ(95.3px);
+  }
+  #homeContainer #infoMainContainer #infoCarroussel .infoContainer .infotitle h3 {
+    font-size: 1.8em;
+  }
+  #homeContainer #infoMainContainer #infoCarroussel .infoContainer .infoContent {
+    font-size: 0.9em;
   }
 }
 /*# sourceMappingURL=style.css.map */

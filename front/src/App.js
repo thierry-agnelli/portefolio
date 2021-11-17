@@ -33,11 +33,11 @@ function App() {
   return (
     <AppContext.Provider value={contextValue}>
       <Browser>
-        <div id="mainContainer">
+        {/* <div id="mainContainer"> */}
           <Banner />
           <Body />
           <Footer/>
-        </div>
+        {/* </div> */}
       </Browser>
     </AppContext.Provider>
   );

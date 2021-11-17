@@ -2,10 +2,12 @@
 @import "./assets/styleRules/styleRules.scss";
 
 /* Principal */
-#mainContainer{
-    min-height: 900px;
-    padding-bottom: 1em;
+#root{
+    min-height: 99vh;
     font-family: $mainFont;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
 }
 
 /* Classes Globales */

@@ -10,8 +10,8 @@ $smallScreeenZScale: 95.3px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    #infoRotationCommands{
-        .infoCommand{
+    #carrousselRotationCommands{
+        .carrousselCommand{
             margin: 0 0.5em;
             height: 1.25em;
             width: 1.25em;
@@ -141,12 +141,20 @@ $smallScreeenZScale: 95.3px;
 
 @media( max-width: 760px){
     #homeContainer{
+        margin-top: 0.5em;
+        #carrousselRotationCommands{
+            .carrousselCommand{
+                margin: 0 0.5em;
+                height: 1.15em;
+                width: 1.15em;
+                font-size: 1.75em;
+            }
+        }
         #infoMainContainer{
             margin-top: 1em;
+            min-height: 550px;
             #infoCarroussel{
                 transform-origin: center center (0 - $smallScreeenZScale);
-            }
-            #infoCarroussel{
                 #qualifInfo{
                     transform: rotateY(-120deg) translateZ($smallScreeenZScale);
                 }
@@ -155,7 +163,17 @@ $smallScreeenZScale: 95.3px;
                 }
                 #presentationInfo{
                     transform: rotateY(120deg) translateZ($smallScreeenZScale);
-                }    
+                }
+                .infoContainer{
+                    .infotitle{
+                        h3{
+                            font-size: 1.8em;;
+                        }
+                    }
+                    .infoContent{
+                        font-size: 0.9em;
+                    }
+                }
             }
         }
 

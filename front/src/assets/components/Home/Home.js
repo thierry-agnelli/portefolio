@@ -10,11 +10,8 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFileCode } from "@fortawesome/free-regular-svg-icons";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-
-// Composant Acceuil
+// Composant Accueil
 const Home = () => {
     // Constantes
     const largeScreenZScale = 600;
@@ -100,9 +97,8 @@ const Home = () => {
                     `;
 
             // Modification position
-            // infoToolTipRef.current.style.top = `${e.target.offsetTop}px`;
-            infoToolTipRef.current.style.top = `${e.target.offsetTop + 250}px`;
-            infoToolTipRef.current.style.left = `${e.target.offsetLeft + 150}px`;
+            infoToolTipRef.current.style.top = `${e.clientY - 25}px`;
+            infoToolTipRef.current.style.left = `${e.clientX + 50}px`;
             // Affichage
             infoToolTipRef.current.style.visibility = "visible";
         }
@@ -118,8 +114,10 @@ const Home = () => {
     };
 
     // Rotation infos Boutons
-    const infosContainerRotation = (e) => {
+    const carrousselRotation = (e) => {
+        // Récupérration de la rotation actuelle (/120 + math.floor permet de se déplacer sur une position d'un bloc et pas entre 2)
         let rotation = Math.floor(actRotation/120);
+
         if (e.target.id.split('-')[1] === "Right")
             rotation++;
         else
@@ -129,7 +127,7 @@ const Home = () => {
     };
 
     // Rotation infos Manuelle
-    const moveCarroussel = (e) => {
+    const manualMoveCarroussel = (e) => {
         setActRotation(actRotation - (touchPosX - e.changedTouches[0].clientX));
         setTouchPosX(e.changedTouches[0].clientX);
     }
@@ -147,16 +145,14 @@ const Home = () => {
 
     return (
         <section id="homeContainer">
-            <div id="infoRotationCommands">
-                {/* <FontAwesomeIcon id="infoCommand-Left" className="infoCommand" icon={faChevronLeft} size="1x" onClick={infosContainerRotation}/> */}
-                {/* <FontAwesomeIcon id="infoCommand-Right" className="infoCommand" icon={faChevronRight} size="1x"  onClick={infosContainerRotation}/> */}
-                <button id="infoCommand-left" className="infoCommand" onClick={infosContainerRotation}>{"<"}</button>
-                <button id="infoCommand-Right" className="infoCommand" onClick={infosContainerRotation}>{">"}</button>
+            <div id="carrousselRotationCommands">
+                <button id="carrousselCommand-left" className="carrousselCommand" onClick={carrousselRotation}>{"<"}</button>
+                <button id="carrousselCommand-Right" className="carrousselCommand" onClick={carrousselRotation}>{">"}</button>
             </div>
             <div id="infoMainContainer">
                 <div id="infoCarroussel" ref={infoCarrousselRef} 
                  onTouchStart={touchOrigin}
-                 onTouchMove={moveCarroussel}
+                 onTouchMove={manualMoveCarroussel}
                  style={{transform: `rotateY(${actRotation}deg) translateZ(-${zScale}px)`}}>
                     <div id="qualifInfo" className="infoContainer">
                         <div className="infotitle">

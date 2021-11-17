@@ -30,7 +30,7 @@ const LogMenu = () => {
                     <div>{`${context.getUser().lastName} ${context.getUser().firstName}`}</div>
                     <div id="unlog" className="link" onClick={unlog}>Déconnexion</div>
                 </div> :
-                <Link to="/login" className="link">Se connecter</Link>}
+                <Link to="/login" className="link bannerLink">Se connecter</Link>}
             </div>
         </div>
     )

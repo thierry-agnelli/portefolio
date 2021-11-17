@@ -3,6 +3,6 @@
 
 /*Styles composant Body*/
 #contentContainer{
-    min-height: 720px;
-    padding-top: 2em;
+    box-sizing: content-box;
+    padding: 1em 0;
 }
