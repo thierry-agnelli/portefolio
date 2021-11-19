@@ -87,7 +87,7 @@ const userController = {
   // Authentification connexion
   authentification: (req, res) => {
     promptLog(`login attempt: ${req.body.email}`, "yellow");
-    console.log(req.body);
+
     User.findOne({ email: req.body.email })
       .then(result => {
         // Si un utilisateur a été trouvé
@@ -99,7 +99,7 @@ const userController = {
             if (result.validated === "true") {
               // Génération token d'authentification
               let authentificationToken;
-              
+
               if (req.body.stayLogged)
                 authentificationToken = jwt.sign({ id: result._id }, config.KEY);
               else
@@ -135,7 +135,7 @@ const userController = {
             message = "email ou mot de passe incorrect";
             break;
           case 403:
-            message = "Ce compte n'a pas encore été validé, veuillez consulter votre boîte mail";
+            message = "Ce compte n'a pas encore été validé, un email vous a été envoyé verifiez vos spam.";
             break;
           default:
             errCode = 400;
@@ -206,21 +206,42 @@ const userController = {
   },
   // Changement de mot de passe
   changePassword: (req, res) => {
-    try{
+    try {
       // Vérification token
       const isValidToken = jwt.verify(req.body.token, config.KEY);
       // Génération mot de passe hashé
       const salt = bcrypt.genSaltSync(config.SALT_VALUE);
       const hashedPwd = bcrypt.hashSync(req.body.newPwd, salt);
       // Maj du mot de passe
-      User.updateOne({_id: isValidToken.id}, {hashedPwd: hashedPwd})
-      .then(response => res.status(200).send("Update ok"))
-      .catch(err => res.status(403).send("User not found"));
+      User.updateOne({ _id: isValidToken.id }, { hashedPwd: hashedPwd })
+        .then(response => res.status(200).send("Update ok"))
+        .catch(err => res.status(403).send("User not found"));
     }
-    catch{
+    catch {
       res.status(403).send("Token is ont valid");
     }
   },
+  // Renvoie e-mail de validation
+  resendValidationMail: (req, res) => {
+    promptLog(`Resend a validation to : ${req.body.email}`, "yellow");
+
+    User.findOne({ email: req.body.email })
+      .then(result => {
+        if (result) {
+          accountValidationMail(result)
+            .then(result => {
+              promptLog(`Result: ${result}`, "green");
+              res.status(200).send("Un email vous a été renvoyé.");
+            });
+        }
+        else
+          throw "Error";
+      })
+      .catch(() => {
+        promptLog("No account found with this email", "red")
+        res.status(400).send("Vérifiez l'adresse mail.");
+      });
+  }
 }
 
 export default userController;

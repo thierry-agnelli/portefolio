@@ -21,6 +21,8 @@ userRoute.get("/token-validation/:token", userController.validToken);
 userRoute.post("/reset-password", userController.resetPassword);
 // Changement de mot de passe
 userRoute.put("/change-password", userController.changePassword);
+// Renvoi e-mail de validation
+userRoute.post("/validation-mail", userController.resendValidationMail);
 
 export default userRoute;
 

@@ -85,6 +85,14 @@
     margin: 1em;
     color: red;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .errorLink{
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
 }
 
 /* Contenu */

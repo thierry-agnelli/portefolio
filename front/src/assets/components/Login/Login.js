@@ -15,6 +15,7 @@ const Login = () => {
     const [stayLogged, setStayLogged] = useState(false);
     const [logInSucces, setLogInSucces] = useState(false);
     const [error, setError] = useState("");
+    const [validationError, setValidationError] = useState(false);
 
     /* Références */
     const emailInputRef = useRef(null);
@@ -23,7 +24,7 @@ const Login = () => {
     /* Contexte */
     const context = useContext(AppContext);
 
-    /* Handles */
+    /* Handler */
     // email
     const emailInput = (e) => {
         e.target.classList.remove("formInputError");
@@ -42,7 +43,10 @@ const Login = () => {
     const loginBtnClick = () => {
 
         let valid = true;
+        
+        // Reset des erreurs
         setError("");
+        setValidationError(false);
         // Expression régulière pour vérification email au format *@*.* (* = n fois n'importe quel caractère)
         const regex = new RegExp(".+@.+[.].+");
 
@@ -73,8 +77,12 @@ const Login = () => {
                 .then(response => {
                     if (response.status === 200)
                         return response.json();
-                    else
+                    else{
+                        if(response.status === 403)
+                            setValidationError(true);
+
                         throw response;
+                        }
                 })
                 .then(json => {
                     console.log(json);
@@ -101,6 +109,25 @@ const Login = () => {
             setError("email ou mot de passe incorrect");
     }
 
+    // Renvoi d'un email de validation"
+    const validationResendMail = (e) => {
+        let alertMessage = "";
+
+        fetch(`${config.API_URL}/user/validation-mail`,{
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({email: email})
+        })
+        .then(response => response.text())
+        .then(message => alert(message))
+        .catch(error => console.log("nok"));
+        
+        // alert("Un e-mail vous été renvoyé.");
+    }
+
     return (
         <div id="loginContainer">
             <h3 className="pageTitle">CONNECTEZ-VOUS</h3>
@@ -121,11 +148,16 @@ const Login = () => {
             </form>
             <button id="loginBtn" className="formButton" onClick={loginBtnClick}>Connexion</button>
             <Link to="/registration" id="registerLink" className="link">Pas encore inscrit ?</Link>
-            <div className="error">{error ? error : null}</div>
+            <div className="error">{error ?
+                <> 
+                    <div>{error}</div>
+                    {validationError ? <div>Renvoyer un e-mail de validation <span className="errorLink" onClick={validationResendMail}>ici</span></div> : null}
+                </>
+            : null}</div>
             <Link to="/accueil" className="link" >Retour à l'accueil</Link>
-            {/* Redirection vers accueil si réussite de connexion ou si déjà connecté */}
-            {logInSucces || context.getUser() ? <Redirect to="/accueil" /> : null}
-        </div>
+            {/* Redirection vers accueil si réussite de connexion ou si déjà connecté */ }
+    { logInSucces || context.getUser() ? <Redirect to="/accueil" /> : null }
+        </div >
     );
 };
 

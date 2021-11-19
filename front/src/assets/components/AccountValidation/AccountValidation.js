@@ -1,6 +1,6 @@
 // Dépendances
 import { useState, useEffect } from "react";
-import { useParams, Link, Redirect } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 // Style
 import config from "../../../config.json";
 import "./style.css"
@@ -9,8 +9,8 @@ const AccountValidation = () => {
     /* Paramètres URL */
     const params = useParams();
     /* Variables d'états */
-    const [validated, setValidated] = useState(true);
-    const [redirect, setRedirect] = useState(false);
+    const [validated, setValidated] = useState(false);
+    const [noAccountFound, setNoAccountFound] = useState(false);
 
     // Validation en base du compte utilisateur
     useEffect(() => {
@@ -33,26 +33,25 @@ const AccountValidation = () => {
                 console.log(message);
                 setValidated(true);
             })
-            // Sinon (redirection vers la page d'acceuil)
             .catch(err => {
                 console.log(err);
-                setRedirect(true);
+                setNoAccountFound(true);
             });
     }, []);
 
     return (
-        <>
+        <section>
             <div id="validationContainer">
+                <h3 className="pageTitle">VALIDATION DE COMPTE</h3>
                 {validated ?
-                    <>
-                        <h3 className="pageTitle">VALIDATION DE COMPTE</h3>
-                        <p>Votre compte a bien été validé.</p>
-                    </>
+                    <p>Votre compte a bien été validé.</p>
+                    : null}
+                {noAccountFound ? 
+                    <p>Votre compte a déjà été validé.</p>
                     : null}
                     <Link to="/accueil" className="link">Retour à l'accueil</Link>
             </div>
-            {redirect ? <Redirect to="/"/> : null}
-        </>
+        </section>
     )
 };
 
