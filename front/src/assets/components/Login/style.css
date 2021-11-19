@@ -35,7 +35,6 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-bottom: 1.5em;
 }
 
 #loginContainer .forgottenPwd {

@@ -21,7 +21,8 @@ const Registration = () => {
         postCode: "",
         city: "",
         phone: "",
-        pwd: ""
+        pwd: "",
+        newsLetter: true
     });
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
@@ -120,7 +121,13 @@ const Registration = () => {
         // Si le champs n'est pas le password répété (champ de données)
         if (field !== "repeatPwd") {
             registrationData[field] = e.target.value;
+
+            // newdLetter
+            if(field === "newsLetter")
+                registrationData[field] = e.target.checked;
+
             setRegistrationData({ ...registrationData });
+
             // Vérification que le password correspond au password répété
             if (field === "pwd")
                 checkRepeatPwd();
@@ -148,10 +155,14 @@ const Registration = () => {
             checkRepeatPwd();
     };
 
+    const test = (e) => {
+        console.log(e.target.checked);
+    }
+
     return (
         <div id="registrationContainer">
             {!success ?
-                <>
+                <section>
                     <h3 className="pageTitle">INSCRIPTION</h3>
                     <form id="registrationForm">
                         <div className="formContainer">
@@ -175,15 +186,19 @@ const Registration = () => {
                             <input type="password" id="registerInput_pwd" ref={pwdRef} onChange={dataInput} />
                             <label className="LabelRow" htmlFor="registerInput_repeatPwd">Répéter le mot de passe : <span className="requiredField">*</span></label>
                             <input type="password" id="registerInput_repeatPwd" ref={repeatPwdRef} onChange={dataInput} />
+                            <div id="newsLetterSubscritpion">
+                                <input type="checkbox" id="registerInput_newsLetter" checked={registrationData.newsLetter} onClick={dataInput}/>
+                                <label className="LabelRow" htmlFor="registerInput_newsetter">Inscription à la newsLetter</label>
+                            </div>
                         </div>
                     </form>
                     <button className="formButton" onClick={submitRegistration}>Soumettre</button>
                     <div className="error">{error}</div>
-                </> :
-                <>
+                </section> :
+                <section id="subscritpionCondirmation">
                     <h2>Bravo !</h2>
                     <p>Un e-mail de confirmation vous a été envoyé. Veuillez consulter votre boîte de réception.</p>
-                </>}
+                </section>}
             <Link to="/accueil" className="link" >Retour à l'accueil</Link>
             {context.getUser() ? <Redirect to="/accueil" /> : null}
         </div>

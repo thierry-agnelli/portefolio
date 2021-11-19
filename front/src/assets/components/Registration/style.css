@@ -24,4 +24,36 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+#registrationContainer #registrationForm .formContainer #newsLetterSubscritpion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#registrationContainer #registrationForm .formContainer #newsLetterSubscritpion input {
+  margin: 0 1em;
+  width: auto;
+}
+
+#registrationContainer #subscritpionCondirmation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#registrationContainer #subscritpionCondirmation h2 {
+  font-size: 2.5em;
+  margin: 0;
+}
 /*# sourceMappingURL=style.css.map */

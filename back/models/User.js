@@ -12,7 +12,8 @@ const userSchema = new mongoose.Schema({
     phoneNumber: String,
     hashedPwd: { type: String, required: true },
     rank: { type: String, default: "Utilisateur" },
-    registrationDate: {type: String, required: true},
+    registrationDate: { type: String, required: true },
+    newsLetter: { type: Boolean, required: true },
     validated: { type: String, required: true },
 }, { collection: "Users" });
 

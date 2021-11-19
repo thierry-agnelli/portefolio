@@ -40,6 +40,7 @@ const userController = {
       phoneNumber: req.body.phone,
       hashedPwd: hashedPwd,
       registrationDate: frDate,
+      newsLetter: req.body.newsLetter,
       validated: token
     });
 
