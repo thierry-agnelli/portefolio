@@ -1,4 +1,4 @@
 {
-    "_API_URL": "http://localhost:3001",
-    "API_URL": "https://tagnel-back.osc-fr1.scalingo.io"
+    "API_URL": "http://localhost:3001",
+    "_API_URL": "https://tagnel-back.osc-fr1.scalingo.io"
 }

@@ -40,12 +40,12 @@ const Banner = () => {
                 </div>
             </div>
             <div id="bannerBottom">
-                <h2>Développeur Fullstack</h2>
                 <div>
-                    <span>Disponible</span>
-                    <a  href="https://www.linkedin.com/in/thierryagnelli" target="_blank"><FontAwesomeIcon className="presentationIcon" icon={faLinkedin} /></a>
+                    <h2>Développeur Fullstack</h2>
+                    <a href="https://www.linkedin.com/in/thierryagnelli" target="_blank"><FontAwesomeIcon className="presentationIcon" icon={faLinkedin} /></a>
                     <a href="https://github.com/thierry-agnelli" target="_blank"><FontAwesomeIcon className="presentationIcon" icon={faGithubSquare} /></a>
                 </div>
+                <span>Disponible</span>
             </div>
         </header>
     );

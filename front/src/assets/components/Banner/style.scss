@@ -62,20 +62,26 @@
     }
     #bannerBottom{
         margin: 0 0 0 90px;
-        h2{
-            margin: 0;
-            padding: 0;
-            font-size: 1.3em;
-        }
         div{
-            margin: 0;
-            padding: 0;
-            font-size: 1em;
+            display: flex;
+            align-items: flex-end;
+            h2{
+                margin: 0;
+                padding: 0;
+                font-size: 1.3em;
+            }
             .presentationIcon{
                 margin-left: 0.35em;
                 color: $mainColor;
-                height: 1em;
+                height: 1.4em;
+                width: 1.4em;
             }
+        }
+        span{
+            margin: 0;
+            padding: 0;
+            font-size: 1em;
+            
         }
     }
 }
