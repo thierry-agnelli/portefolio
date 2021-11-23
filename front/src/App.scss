@@ -116,3 +116,26 @@
     font-weight: bold;
     border-bottom: 1px double $mainColor;
 }
+
+.carrousselCommand{
+    margin: 0 0.5em;
+    height: 1.25em;
+    width: 1.25em;
+    border-style: none;
+    border-radius: 100%;
+    background-color: $mainColor;
+    font-size: 2.5em;
+    color: $secondColor;
+    cursor: pointer;
+}
+
+
+// Responsinve
+@media( max-width: 760px){
+    .carrousselCommand{
+        margin: 0 0.5em;
+        height: 1.15em;
+        width: 1.15em;
+        font-size: 1.75em;
+    }
+}

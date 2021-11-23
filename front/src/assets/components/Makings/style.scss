@@ -5,21 +5,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    perspective: 1000px;
     #makingsList{
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
         justify-content: space-around;
-        width: 100%;
+        width: 100vw;
+        height: 50vh;
+        position: relative;
+        transform-style: preserve-3d;
         .makingItem{
             margin: 1em 0em;
             padding: 0.3em;
             border: 0.3em ridge #EEEEEE;
             border-radius: 0.35em;
-            height: 18em;
-            width: 15em;
+            height: 45vh;
+            width: 35vh;
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: absolute;
+            transition: transform 0.5s;
             img{
                 width: 100%;    
             }
@@ -30,6 +36,9 @@
                 flex-direction: column;
                 .makingItemTitle{
                     font-weight: bold;
+                }
+                .makingLink{
+                    align-self: flex-end;
                 }
             }
         }

@@ -10,12 +10,13 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFileCode } from "@fortawesome/free-regular-svg-icons";
+// Constantes
+const largeScreenZScale = 600;
+const smallScreenZScale = 95.3;
+
 
 // Composant Accueil
 const Home = () => {
-    // Constantes
-    const largeScreenZScale = 600;
-    const smallScreenZScale = 95.3;
     /* Variables d'états */
     const [qualifications, setQualifications] = useState([]);
     const [skills, setSkills] = useState([]);
@@ -116,7 +117,7 @@ const Home = () => {
     // Rotation infos Boutons
     const carrousselRotation = (e) => {
         // Récupérration de la rotation actuelle (/120 + math.floor permet de se déplacer sur une position d'un bloc et pas entre 2)
-        let rotation = Math.floor(actRotation/120);
+        let rotation = Math.floor(actRotation / 120);
 
         if (e.target.id.split('-')[1] === "Right")
             rotation++;
@@ -146,14 +147,14 @@ const Home = () => {
     return (
         <section id="homeContainer">
             <div id="carrousselRotationCommands">
-                <button id="carrousselCommand-left" className="carrousselCommand" onClick={carrousselRotation}>{"<"}</button>
-                <button id="carrousselCommand-Right" className="carrousselCommand" onClick={carrousselRotation}>{">"}</button>
+                <button id="infoCarrousselCommand-left" className="carrousselCommand" onClick={carrousselRotation}>{"<"}</button>
+                <button id="infoCarrousselCommand-Right" className="carrousselCommand" onClick={carrousselRotation}>{">"}</button>
             </div>
             <div id="infoMainContainer">
-                <div id="infoCarroussel" ref={infoCarrousselRef} 
-                 onTouchStart={touchOrigin}
-                 onTouchMove={manualMoveCarroussel}
-                 style={{transform: `rotateY(${actRotation}deg) translateZ(-${zScale}px)`}}>
+                <div id="infoCarroussel" ref={infoCarrousselRef}
+                    onTouchStart={touchOrigin}
+                    onTouchMove={manualMoveCarroussel}
+                    style={{ transform: `rotateY(${actRotation}deg) translateZ(-${zScale}px)` }}>
                     <div id="qualifInfo" className="infoContainer">
                         <div className="infotitle">
                             <div className="infoIcontainer">

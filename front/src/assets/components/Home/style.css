@@ -16,18 +16,6 @@
           align-items: center;
 }
 
-#homeContainer #carrousselRotationCommands .carrousselCommand {
-  margin: 0 0.5em;
-  height: 1.25em;
-  width: 1.25em;
-  border-style: none;
-  border-radius: 100%;
-  background-color: #B04541;
-  font-size: 2.5em;
-  color: white;
-  cursor: pointer;
-}
-
 #homeContainer #infoMainContainer {
   margin-top: 3em;
   height: 55vh;
@@ -195,12 +183,6 @@
 @media (max-width: 760px) {
   #homeContainer {
     margin-top: 0.5em;
-  }
-  #homeContainer #carrousselRotationCommands .carrousselCommand {
-    margin: 0 0.5em;
-    height: 1.15em;
-    width: 1.15em;
-    font-size: 1.75em;
   }
   #homeContainer #infoMainContainer {
     margin-top: 1em;

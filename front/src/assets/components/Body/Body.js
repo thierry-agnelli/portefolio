@@ -36,7 +36,7 @@ const Body = () => {
           <Experiences />
         </Route>
         <Route path="/realisations">
-          <Wip />
+          <Makings />
         </Route>
         <Route path="/contact">
           <Contact />
