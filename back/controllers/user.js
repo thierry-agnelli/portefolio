@@ -241,6 +241,9 @@ const userController = {
         promptLog("No account found with this email", "red")
         res.status(400).send("Vérifiez l'adresse mail.");
       });
+  },
+  isAdmin: (req, res) => {
+    console.log("isAdmin?");
   }
 }
 

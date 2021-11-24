@@ -23,6 +23,8 @@ userRoute.post("/reset-password", userController.resetPassword);
 userRoute.put("/change-password", userController.changePassword);
 // Renvoi e-mail de validation
 userRoute.post("/validation-mail", userController.resendValidationMail);
+// Vérification si l'utilsiateur est un administrateur
+userRoute.get("/is-admin/:token", userController.isAdmin);
 
 export default userRoute;
 
