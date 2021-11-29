@@ -1,0 +1,86 @@
+// Règles
+@import "../../styleRules/styleRules.scss";
+
+
+#adminContainer{
+    #addMakingContainer{
+        margin: 0 1em;
+        #addMakingForm{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding: 0.5em 0;
+            #makingPicContainer{
+                width: 20em;
+                margin : 0 0.5em;
+                #makingPicPreview{
+                    height: 12.5em;
+                    width : 20em;
+                    margin: 0.5em 0;
+                    border: 3px ridge #707070;
+                    background-color: #DDDDDD;
+                }
+                #makingPic{
+                    visibility: hidden;
+                }
+                #makingPicLabel{
+                    padding: 0.25em 1em;
+                }
+            }
+            #makingInfoContainer{
+                width: 20em;
+                margin : 0 0.5em;
+                #makingInput-info{
+                    height: 4.5em;
+                    width: 24em;
+                    resize: none;
+                    border: none;
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+}
+// Règles
+@import "../../styleRules/styleRules.scss";
+
+
+#adminContainer{
+    #addMakingContainer{
+        margin: 0 1em;
+        #addMakingForm{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding: 0.5em 0;
+            #makingPicContainer{
+                width: 20em;
+                margin : 0 0.5em;
+                #makingPicPreview{
+                    height: 12.5em;
+                    width : 20em;
+                    margin: 0.5em 0;
+                    border: 3px ridge #707070;
+                    background-color: #DDDDDD;
+                }
+                #makingPic{
+                    visibility: hidden;
+                }
+                #makingPicLabel{
+                    padding: 0.25em 1em;
+                }
+            }
+            #makingInfoContainer{
+                width: 20em;
+                margin : 0 0.5em;
+                #makingInput-info{
+                    height: 4.5em;
+                    width: 24em;
+                    resize: none;
+                    border: none;
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+}

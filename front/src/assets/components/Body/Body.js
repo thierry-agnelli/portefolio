@@ -8,7 +8,7 @@ import Makings from "../Makings/Makings";
 import Contact from "../Contact/Contact";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
-import Admin from "../Admin/Admin";
+import AdminPannel from "../AdminPannel/AdminPannel";
 import AccountValidation from "../AccountValidation/AccountValidation";
 import ForgottenPwd from "../ForgottentPwd/ForgottentPwd";
 import ResetPassword from "../ResetPassword/ResetPassword";
@@ -48,7 +48,7 @@ const Body = () => {
           <Registration />
         </Route>
         <Route path="/admin">
-          <Admin />
+          <AdminPannel />
         </Route>
         <Route path="/account-validation/:validationToken" >
           <AccountValidation />

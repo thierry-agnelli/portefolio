@@ -1,0 +1,108 @@
+/* Colors */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+#adminContainer #addMakingContainer {
+  margin: 0 1em;
+}
+
+#adminContainer #addMakingContainer #addMakingForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  padding: 0.5em 0;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingPicContainer {
+  width: 20em;
+  margin: 0 0.5em;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingPicContainer #makingPicPreview {
+  height: 12.5em;
+  width: 20em;
+  margin: 0.5em 0;
+  border: 3px ridge #707070;
+  background-color: #DDDDDD;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingPicContainer #makingPic {
+  visibility: hidden;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingPicContainer #makingPicLabel {
+  padding: 0.25em 1em;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingInfoContainer {
+  width: 20em;
+  margin: 0 0.5em;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingInfoContainer #makingInput-info {
+  height: 4.5em;
+  width: 24em;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+/* Colors */
+/* Fonts */
+#adminContainer #addMakingContainer {
+  margin: 0 1em;
+}
+
+#adminContainer #addMakingContainer #addMakingForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  padding: 0.5em 0;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingPicContainer {
+  width: 20em;
+  margin: 0 0.5em;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingPicContainer #makingPicPreview {
+  height: 12.5em;
+  width: 20em;
+  margin: 0.5em 0;
+  border: 3px ridge #707070;
+  background-color: #DDDDDD;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingPicContainer #makingPic {
+  visibility: hidden;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingPicContainer #makingPicLabel {
+  padding: 0.25em 1em;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingInfoContainer {
+  width: 20em;
+  margin: 0 0.5em;
+}
+
+#adminContainer #addMakingContainer #addMakingForm #makingInfoContainer #makingInput-info {
+  height: 4.5em;
+  width: 24em;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+/*# sourceMappingURL=style.css.map */

@@ -242,8 +242,30 @@ const userController = {
         res.status(400).send("Vérifiez l'adresse mail.");
       });
   },
+  //Vérification si l'utilisateur est un administrateur
   isAdmin: (req, res) => {
-    console.log("isAdmin?");
+    promptLog("User admin checking", "yellow");
+    // Vérification du token
+    try{
+      const userID = jwt.verify(req.params.token, config.KEY).id;
+
+      // Si le token est valide, vérification si l'utilisateur est administrateur
+      User.findOne({_id: userID})
+      .then(result =>{
+        if(result.rank === "Administrateur"){
+          promptLog(`User (id: ${result._id}) is an admin.`, "green");
+          res.status(200).send("ok");
+        }
+        else{
+          promptLog(`User (id: ${result._id}) is not an admin.`, "red");
+          throw "User not found or is not an admin."
+        }
+      })
+      .catch(err => console.log(err));
+    }
+    catch{
+      res.status(400).send("User not found or is not an admin.");
+    }
   }
 }
 
