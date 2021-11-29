@@ -135,6 +135,34 @@
   font-size: 1em;
 }
 
+#banner #cookieMessage {
+  position: absolute;
+  top: 0.5em;
+  left: 30vw;
+  height: 10em;
+  width: 30vw;
+  min-width: 20em;
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 3px ridge darkgrey;
+  border-radius: 0.5em;
+  background-color: white;
+}
+
+#banner #cookieMessage button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 @media (max-width: 910px) {
   #banner #bannerTop h1 {
     font-size: 1.45em;

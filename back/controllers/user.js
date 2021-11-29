@@ -107,7 +107,6 @@ const userController = {
 
               // Réponse
               res.status(200).json({
-                id: result._id,
                 firstName: result.firstName,
                 lastName: result.lastName,
                 email: result.email,

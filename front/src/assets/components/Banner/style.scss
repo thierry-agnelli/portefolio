@@ -83,6 +83,24 @@
             font-size: 1em;
         }
     }
+    #cookieMessage{
+        position: absolute;
+        top: 0.5em;
+        left: 30vw;
+        height: 10em;
+        width: 30vw;
+        min-width: 20em;
+        padding: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 3px ridge $thirdColor;
+        border-radius: 0.5em;
+        background-color: $secondColor;
+        button{
+            align-self: flex-end;
+        }
+    }
 }
 
 @media (max-width: 910px){

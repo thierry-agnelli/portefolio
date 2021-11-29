@@ -1,4 +1,5 @@
 // Dépendances
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 //Composants
 import LogMenu from "./LogMenu/LogMenu.js";
@@ -14,6 +15,21 @@ import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 
 // Bannière du site
 const Banner = () => {
+    /* Variables détats */
+    const [cookieMessage, setCookieMessage] = useState(false);
+
+    /* Hook */
+    useEffect(() => {
+        if(!localStorage.getItem("cookieMessage"))
+            setCookieMessage(true);
+    }, []);
+
+    /* Handler */
+    const cookieMessageValidation = e => {
+        localStorage.setItem("cookieMessage", false);
+        setCookieMessage(false);
+    }
+
     return (
         <header id="banner">
             <div id="bannerTop">
@@ -47,6 +63,14 @@ const Banner = () => {
                 </div>
                 <span>Disponible</span>
             </div>
+            {/* Affichage message cookie */}
+            {cookieMessage ?
+            <div id="cookieMessage">
+                <h3>Bienvenue !</h3>
+                <div>Ce site n'utilise pas encore de cookie.</div>
+                <div>Les refuser quand même?</div>
+                <button className="formButton" onClick={cookieMessageValidation}>Oui</button>   
+            </div> : null}
         </header>
     );
 };
