@@ -86,9 +86,10 @@
     #cookieMessage{
         position: absolute;
         top: 0.5em;
-        left: 30vw;
+        left: 50%;
+        transform: translateX(-12.5em);
         height: 10em;
-        width: 30vw;
+        width: 25em;
         min-width: 20em;
         padding: 0.5em;
         display: flex;
@@ -99,6 +100,8 @@
         background-color: $secondColor;
         button{
             align-self: flex-end;
+            min-width: 5em;
+            width: 5em;
         }
     }
 }

@@ -138,9 +138,11 @@
 #banner #cookieMessage {
   position: absolute;
   top: 0.5em;
-  left: 30vw;
+  left: 50%;
+  -webkit-transform: translateX(-12.5em);
+          transform: translateX(-12.5em);
   height: 10em;
-  width: 30vw;
+  width: 25em;
   min-width: 20em;
   padding: 0.5em;
   display: -webkit-box;
@@ -161,6 +163,8 @@
 #banner #cookieMessage button {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  min-width: 5em;
+  width: 5em;
 }
 
 @media (max-width: 910px) {

@@ -9,7 +9,8 @@ const makingRouter = new express.Router();
 /* Path Route making */
 // Toutes les entrées
 makingRouter.get("/get-all", makingController.getAll);
-
+// Enregistrement d'une réalisation
+makingRouter.post("/store", makingController.store);
 
 
 export default makingRouter;

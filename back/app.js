@@ -8,6 +8,7 @@ import messageRouter from "./routes/message.js";
 import infoRouter from "./routes/info.js";
 import experienceRouter from "./routes/experiences.js";
 import makingRouter from "./routes/making.js";
+import imageRouter from "./routes/image.js";
 
 // Création app
 const app = express()
@@ -25,6 +26,7 @@ app.use("/message", messageRouter);
 app.use("/info", infoRouter);
 app.use("/experience", experienceRouter);
 app.use("/making", makingRouter);
+app.use("/image", imageRouter);
 
 // Home
 app.get("/", (req, res) => {

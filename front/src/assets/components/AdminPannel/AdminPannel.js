@@ -22,7 +22,7 @@ const AdminPannel = () => {
         link: "",
         info: ""
     });
-
+    const [testDB, setTestDB] = useState(null);
     // Contexte
     const context = useContext(AppContext);
 
@@ -94,54 +94,27 @@ const AdminPannel = () => {
                     body: JSON.stringify({
                         title: makingData.title,
                         link: makingData.link,
-                        info: makingData.info,
-                        pictureName:picture.name
+                        details: makingData.info,
+                        picture: {
+                            name: picture.name,
+                            binary: binary.split(',')[1],
+                            contentType: makingBinaryPic.type
+                        }
                     })
                 })
                     .then(response => {
-                        if(response.status === 200){
+                        if (response.status === 200)
                             console.log(binary);
-                            // Si l'enregistrement de la réalisation s'est bien passée enregistrement de l'image
-                            fetch(`${config.API_URL}/image/store`,{
-                                method: "POST",
-                                headers:{
-                                    "Accept": "application/json",
-                                    "Content-type": "application/json"
-                                },
-                                body:JSON.stringify({
-                                    // name: picture.name,
-                                    binary: binary.split(',')[1],
-                                    // contentType: makingBinaryPic.type
-                                })
-                            })
-                            .then(picResponse => console.log("image enregistrée"))
-                            .catch(err => console.log("image pas enregistrée"));
-                        }
                         else
                             throw response;
-                        
+
                     })
-                    .catch(err =>{
+                    .catch(err => {
                         err.text()
-                        .then(message => console.log(message));
+                            .then(message => console.log(message));
                     });
             });
     }
-
-    // Upload image
-    // const uploadPic = (e) => {
-    //     fetch(`${config.API_URL}/image/store`)
-    //         .then(response => console.log("ok"))
-    //         .catch(err => console.log("nok"));
-
-    // }
-
-    // const testDBClick = (e) => {
-    //     fetch(`${config.API_URL}/making/get-byname`)
-    //         .then(response => response.blob())
-    //         .then(blob => setTestDB(URL.createObjectURL(blob)))
-    //         .catch(err => console.log("nok"));
-    // }
 
     /* Fonctions */
     // Convertion fichier image en binaire
@@ -160,7 +133,7 @@ const AdminPannel = () => {
                     <div id="makingPicContainer">
                         <span className="labelRow">Image : {picture ? <b>{picture.name}</b> : null}</span>
                         {makingBinaryPic ? <img id="makingPicPreview" src={URL.createObjectURL(makingBinaryPic)} alt="Preview réalisation" />
-                        :<div id="makingPicPreview"/>}
+                            : <div id="makingPicPreview" />}
                         <label id="makingPicLabel" className="formButton" htmlFor="makingPic">Choisir un fichier</label>
                         <input type="file" id="makingPic" name="makingImage" accept="image/png, image/jpg" onChange={imageloading} />
                     </div>
@@ -175,15 +148,6 @@ const AdminPannel = () => {
                 </form>
                 <button className="formButton" onClick={sendMaking}>Envoyer</button>
             </div>
-            {/* <div>
-                <button onClick={testDBClick}>Test</button>
-                {testDB ?
-                    <div>
-                        <div>Name</div>
-                        <img src={testDB} />
-                    </div>
-                    : null}
-            </div> */}
             {!isAdmin ? <Redirect to="/accueil" /> : null}
         </section>
     )
