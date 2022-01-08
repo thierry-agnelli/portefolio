@@ -129,6 +129,10 @@
     cursor: pointer;
 }
 
+pre{
+    font-family: $mainFont;
+    font-size: 1.1em;
+}
 
 // Responsinve
 @media( max-width: 760px){

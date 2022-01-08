@@ -16,8 +16,9 @@ const app = express()
 // Cors
 app.use(cors());
 
-// Acceptation données json
-app.use(express.json());
+// Acceptation données json + définition taille maximum des données
+app.use(express.json({limit: '25mb'}));
+app.use(express.urlencoded({limit: '25mb'}));
 
 // Routes
 app.use("/user", userRoute);

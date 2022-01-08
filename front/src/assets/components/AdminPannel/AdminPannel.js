@@ -119,8 +119,11 @@ const AdminPannel = () => {
     /* Fonctions */
     // Convertion fichier image en binaire
     const fileToBinary = (file) => new Promise((resolve, reject) => {
+        // Création du reader
         const reader = new FileReader();
+        // Déclaration event revoie du résultat au chargement du reader(ligne suivante)
         reader.onload = e => resolve(e.target.result);
+        // Lecture du fichier
         reader.readAsDataURL(picture);
     });
 

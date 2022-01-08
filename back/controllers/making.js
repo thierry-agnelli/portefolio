@@ -11,15 +11,20 @@ const makingController = {
     getAll: (req, res) => {
         promptLog("Getting all makings list", "yellow");
 
-        res.status(200).json([
-            { name: 1 },
-            { name: 2 },
-            { name: 3 },
-            { name: 4 },
-            { name: 5 },
-            { name: 6 },
-            { name: 7 },
-        ]);
+        Making.find().sort("-uploadingDate")
+        .then(result => {
+            res.status(200).json(result);
+        })
+
+        // res.status(200).json([
+        //     { title: 1 },
+        //     { title: 2 },
+        //     { title: 3 },
+        //     { title: 4 },
+        //     { title: 5 },
+        //     { title: 6 },
+        //     { title: 7 },
+        // ]);
     },
     store: (req, res) => {
         promptLog(`Storing new making: ${req.body.title}`, "yellow");

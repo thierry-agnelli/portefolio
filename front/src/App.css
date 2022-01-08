@@ -155,6 +155,11 @@
   cursor: pointer;
 }
 
+pre {
+  font-family: "KoHo", sans-serif;
+  font-size: 1.1em;
+}
+
 @media (max-width: 760px) {
   .carrousselCommand {
     margin: 0 0.5em;

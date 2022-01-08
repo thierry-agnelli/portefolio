@@ -60,6 +60,7 @@
 
 #makingsContainer #makingsList .makingItem img {
   width: 100%;
+  border: 1px solid black;
 }
 
 #makingsContainer #makingsList .makingItem .makingItemInfos {
