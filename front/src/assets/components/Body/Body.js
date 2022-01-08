@@ -47,6 +47,9 @@ const Body = () => {
         <Route path="/registration">
           <Registration />
         </Route>
+        <Route path="/user-profile">
+          <Wip />
+        </Route>
         <Route path="/admin">
           <AdminPannel />
         </Route>

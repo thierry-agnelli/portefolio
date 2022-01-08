@@ -23,7 +23,7 @@ const LogMenu = () => {
 
     return (
         <div id="LogContainer">
-            <Link to="/admin" className="link bannerLink"><FontAwesomeIcon icon={faUser} id="userIcon" size="1x"/></Link>
+            <Link to="/user-profile" className="link bannerLink"><FontAwesomeIcon icon={faUser} id="userIcon" size="1x"/></Link>
             <div id="logTextContainer">
                 {context.getUser() ?
                 <div id="currentUserContainer">
